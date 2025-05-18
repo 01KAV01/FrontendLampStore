@@ -19,7 +19,7 @@ const DashboardProductTable = () => {
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
-    fetch("${process.env.NEXT_PUBLIC_API_URL}/api/products?mode=admin", {cache: "no-store"})
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products?mode=admin`, {cache: "no-store"})
       .then((res) => {
         return res.json();
       })

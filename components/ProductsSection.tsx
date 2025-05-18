@@ -14,7 +14,7 @@ import Heading from "./Heading";
 
 const ProductsSection = async () => {
   // sending API request for getting all products
-  const data = await fetch("${process.env.NEXT_PUBLIC_API_URL}/api/products");
+  const data = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/products`);
   const products = await data.json();
   return (
     <div className="bg-blue-500 border-t-4 border-white">
