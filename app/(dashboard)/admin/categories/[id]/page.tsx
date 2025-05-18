@@ -23,7 +23,7 @@ const DashboardSingleCategory = ({
       method: "DELETE",
     };
     // sending API request for deleting a category
-    fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`, requestOptions)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`, requestOptions)
       .then((response) => {
         if (response.status === 204) {
           toast.success("Category deleted successfully");
@@ -47,7 +47,7 @@ const DashboardSingleCategory = ({
         }),
       };
       // sending API request for updating a category
-      fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`, requestOptions)
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`, requestOptions)
         .then((response) => {
           if (response.status === 200) {
             return response.json();
@@ -67,7 +67,7 @@ const DashboardSingleCategory = ({
 
   useEffect(() => {
     // sending API request for getting single categroy
-    fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`)
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`)
       .then((res) => {
         return res.json();
       })

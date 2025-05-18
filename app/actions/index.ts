@@ -3,7 +3,7 @@
 import { revalidateTag } from "next/cache";
 
 export async function deleteWishItem(id: string){
-  await fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/wishlist/${id}`, {
+  await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/wishlist/${id}`, {
     method: "DELETE",
   });
 }
