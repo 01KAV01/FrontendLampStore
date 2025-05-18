@@ -64,7 +64,15 @@ const DashboardProductTable = () => {
                 <tr key={nanoid()}>
                   <th>
                     <label>
-                      <input type="checkbox" className="checkbox" />
+                      <input
+                        type="checkbox"
+                        className="checkbox"
+                        id={`select-product-${product.id}`}
+                        title="Выбрать продукт"
+                      />
+                      <label htmlFor={`select-product-${product.id}`} className="sr-only">
+                        Выбрать продукт
+                      </label>
                     </label>
                   </th>
 

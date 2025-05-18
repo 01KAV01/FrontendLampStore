@@ -226,6 +226,7 @@ const AddNewProduct = () => {
           <input
             type="file"
             className="file-input file-input-bordered file-input-lg w-full max-w-sm"
+            placeholder="Выберите изображение продукта"
             onChange={(e: any) => {
               uploadFile(e.target.files[0]);
               setProduct({ ...product, mainImage: e.target.files[0].name });

@@ -260,6 +260,8 @@ const DashboardProductDetails = ({
           <input
             type="file"
             className="file-input file-input-bordered file-input-lg w-full max-w-sm"
+            placeholder="Upload main product image"
+            title="Upload main product image"
             onChange={(e) => {
               const files = e.target.files;
               const selectedFile = files && files[0];

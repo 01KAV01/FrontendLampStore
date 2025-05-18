@@ -107,7 +107,7 @@ const Header = () => {
           <div className="flex gap-x-5 items-center">
             <FaBell className="text-xl" />
             <div className="dropdown dropdown-end">
-              <div tabIndex={0} role="button" className="w-10">
+              <div tabIndex={0} role="button" className="w-10" aria-label="User menu" title="User menu">
                 <Image
                   src="/randomuser.jpg"
                   alt="random profile photo"
