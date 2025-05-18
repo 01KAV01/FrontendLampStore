@@ -51,10 +51,10 @@ const Filters = () => {
 
   return (
     <div>
-      <h3 className="text-2xl mb-2">Filters</h3>
+      <h3 className="text-2xl mb-2">Фильтры</h3>
       <div className="divider"></div>
       <div className="flex flex-col gap-y-1">
-        <h3 className="text-xl mb-2">Availability</h3>
+        <h3 className="text-xl mb-2">Доступность</h3>
         <div className="form-control">
           <label className="cursor-pointer flex items-center">
             <input
@@ -71,7 +71,7 @@ const Filters = () => {
               }
               className="checkbox"
             />
-            <span className="label-text text-lg ml-2 text-black">In stock</span>
+            <span className="label-text text-lg ml-2 text-black">В наличии</span>
           </label>
         </div>
 
@@ -92,7 +92,7 @@ const Filters = () => {
               className="checkbox"
             />
             <span className="label-text text-lg ml-2 text-black">
-              Out of stock
+              Распродано
             </span>
           </label>
         </div>
@@ -100,7 +100,7 @@ const Filters = () => {
 
       <div className="divider"></div>
       <div className="flex flex-col gap-y-1">
-        <h3 className="text-xl mb-2">Price</h3>
+        <h3 className="text-xl mb-2">Цена</h3>
         <div>
           <input
             type="range"
@@ -119,14 +119,14 @@ const Filters = () => {
               })
             }
           />
-          <span>{`Max price: $${inputCategory.priceFilter.value}`}</span>
+          <span>{`Максимальная стоимость: ₽${inputCategory.priceFilter.value}`}</span>
         </div>
       </div>
 
       <div className="divider"></div>
 
       <div>
-        <h3 className="text-xl mb-2">Minimum Rating:</h3>
+        <h3 className="text-xl mb-2">Минимальный рейтинг:</h3>
         <input
           type="range"
           min={0}
@@ -135,7 +135,7 @@ const Filters = () => {
           onChange={(e) =>
             setInputCategory({
               ...inputCategory,
-              ratingFilter: { text: "rating", value: Number(e.target.value) },
+              ratingFilter: { text: "рейтинг", value: Number(e.target.value) },
             })
           }
           className="range range-info"

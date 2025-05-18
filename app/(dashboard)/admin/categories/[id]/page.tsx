@@ -82,11 +82,11 @@ const DashboardSingleCategory = ({
     <div className="bg-white flex justify-start max-w-screen-2xl mx-auto xl:h-full max-xl:flex-col max-xl:gap-y-5">
       <DashboardSidebar />
       <div className="flex flex-col gap-y-7 xl:pl-5 max-xl:px-5 w-full">
-        <h1 className="text-3xl font-semibold">Category details</h1>
+        <h1 className="text-3xl font-semibold">Подробности категории</h1>
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Category name:</span>
+              <span className="label-text">Название категории:</span>
             </div>
             <input
               type="text"
@@ -105,19 +105,18 @@ const DashboardSingleCategory = ({
             className="uppercase bg-blue-500 px-10 py-5 text-lg border border-black border-gray-300 font-bold text-white shadow-sm hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2"
             onClick={updateCategory}
           >
-            Update category
+            Обновить категорию
           </button>
           <button
             type="button"
             className="uppercase bg-red-600 px-10 py-5 text-lg border border-black border-gray-300 font-bold text-white shadow-sm hover:bg-red-700 hover:text-white focus:outline-none focus:ring-2"
             onClick={deleteCategory}
           >
-            Delete category
+            Удалить категорию
           </button>
         </div>
         <p className="text-xl text-error max-sm:text-lg">
-          Note: if you delete this category, you will delete all products
-          associated with the category.
+          Примечание: если вы удалите эту категорию, вы удалите все продукты, связанные с этой категорией.
         </p>
       </div>
     </div>

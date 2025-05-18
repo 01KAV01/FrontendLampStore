@@ -24,7 +24,7 @@ const DashboardCategory = () => {
       <DashboardSidebar />
       <div className="w-full">
         <h1 className="text-3xl font-semibold text-center mb-5">
-          All Categories
+          Все категории
         </h1>
         <div className="flex justify-end mb-5">
           <Link href="/admin/categories/new">
@@ -34,7 +34,7 @@ const DashboardCategory = () => {
               paddingX={10}
               paddingY={5}
               textSize="base"
-              text="Add new category"
+              text="Добавить новую категорию"
             />
           </Link>
         </div>
@@ -44,11 +44,8 @@ const DashboardCategory = () => {
             <thead>
               <tr>
                 <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
                 </th>
-                <th>Name</th>
+                <th>Название</th>
                 <th></th>
               </tr>
             </thead>
@@ -73,7 +70,7 @@ const DashboardCategory = () => {
                         href={`/admin/categories/${category?.id}`}
                         className="btn btn-ghost btn-xs"
                       >
-                        details
+                        Подробнее
                       </Link>
                     </th>
                   </tr>
@@ -83,7 +80,7 @@ const DashboardCategory = () => {
             <tfoot>
               <tr>
                 <th></th>
-                <th>Name</th>
+                <th></th>
                 <th></th>
               </tr>
             </tfoot>

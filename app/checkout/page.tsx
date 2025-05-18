@@ -183,7 +183,7 @@ const CheckoutPage = () => {
       />
 
       <main className="relative mx-auto grid max-w-screen-2xl grid-cols-1 gap-x-16 lg:grid-cols-2 lg:px-8 xl:gap-x-48">
-        <h1 className="sr-only">Order information</h1>
+        <h1 className="sr-only">Информация о заказе</h1>
 
         <section
           aria-labelledby="summary-heading"
@@ -194,7 +194,7 @@ const CheckoutPage = () => {
               id="summary-heading"
               className="text-lg font-medium text-gray-900"
             >
-              Order summary
+              Резюме заказа
             </h2>
 
             <ul
@@ -218,7 +218,7 @@ const CheckoutPage = () => {
                     <p className="text-gray-500">x{product?.amount}</p>
                   </div>
                   <p className="flex-none text-base font-medium">
-                    ${product?.price}
+                    ₽{product?.price}
                   </p>
                   <p></p>
                 </li>
@@ -228,23 +228,23 @@ const CheckoutPage = () => {
             <dl className="hidden space-y-6 border-t border-gray-200 pt-6 text-sm font-medium text-gray-900 lg:block">
               <div className="flex items-center justify-between">
                 <dt className="text-gray-600">Subtotal</dt>
-                <dd>${total}</dd>
+                <dd>₽{total}</dd>
               </div>
 
               <div className="flex items-center justify-between">
                 <dt className="text-gray-600">Shipping</dt>
-                <dd>$5</dd>
+                <dd>₽5</dd>
               </div>
 
               <div className="flex items-center justify-between">
                 <dt className="text-gray-600">Taxes</dt>
-                <dd>${total / 5}</dd>
+                <dd>₽{total / 5}</dd>
               </div>
 
               <div className="flex items-center justify-between border-t border-gray-200 pt-6">
                 <dt className="text-base">Total</dt>
                 <dd className="text-base">
-                  ${total === 0 ? 0 : Math.round(total + total / 5 + 5)}
+                  ₽{total === 0 ? 0 : Math.round(total + total / 5 + 5)}
                 </dd>
               </div>
             </dl>
@@ -258,7 +258,7 @@ const CheckoutPage = () => {
                 id="contact-info-heading"
                 className="text-lg font-medium text-gray-900"
               >
-                Contact information
+                Контактная информация
               </h2>
 
               <div className="mt-6">
@@ -266,7 +266,7 @@ const CheckoutPage = () => {
                   htmlFor="name-input"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Name
+                  Имя
                 </label>
                 <div className="mt-1">
                   <input
@@ -291,7 +291,7 @@ const CheckoutPage = () => {
                   htmlFor="lastname-input"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Lastname
+                  Фамилия
                 </label>
                 <div className="mt-1">
                   <input
@@ -316,7 +316,7 @@ const CheckoutPage = () => {
                   htmlFor="phone-input"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Phone number
+                  Номер телефона
                 </label>
                 <div className="mt-1">
                   <input
@@ -341,7 +341,7 @@ const CheckoutPage = () => {
                   htmlFor="email-address"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Email address
+                  Электронная почта
                 </label>
                 <div className="mt-1">
                   <input
@@ -367,7 +367,7 @@ const CheckoutPage = () => {
                 id="payment-heading"
                 className="text-lg font-medium text-gray-900"
               >
-                Payment details
+                Реквизиты для оплаты
               </h2>
 
               <div className="mt-6 grid grid-cols-3 gap-x-4 gap-y-6 sm:grid-cols-4">
@@ -376,7 +376,7 @@ const CheckoutPage = () => {
                     htmlFor="name-on-card"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Name on card
+                    Имя на карте
                   </label>
                   <div className="mt-1">
                     <input
@@ -401,7 +401,7 @@ const CheckoutPage = () => {
                     htmlFor="card-number"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Card number
+                   Номер карты
                   </label>
                   <div className="mt-1">
                     <input
@@ -426,7 +426,7 @@ const CheckoutPage = () => {
                     htmlFor="expiration-date"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Expiration date (MM/YY)
+                    Дата окончания срока (MM/YY)
                   </label>
                   <div className="mt-1">
                     <input
@@ -478,7 +478,7 @@ const CheckoutPage = () => {
                 id="shipping-heading"
                 className="text-lg font-medium text-gray-900"
               >
-                Shipping address
+                Адрес доставки
               </h2>
 
               <div className="mt-6 grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-3">
@@ -487,7 +487,7 @@ const CheckoutPage = () => {
                     htmlFor="company"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Company
+                    Компания
                   </label>
                   <div className="mt-1">
                     <input
@@ -511,7 +511,7 @@ const CheckoutPage = () => {
                     htmlFor="address"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Address
+                    Адресс
                   </label>
                   <div className="mt-1">
                     <input
@@ -536,7 +536,7 @@ const CheckoutPage = () => {
                     htmlFor="apartment"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Apartment, suite, etc.
+                    Апартамент, улица, и т.д.
                   </label>
                   <div className="mt-1">
                     <input
@@ -560,7 +560,7 @@ const CheckoutPage = () => {
                     htmlFor="city"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    City
+                    Населённый пункт
                   </label>
                   <div className="mt-1">
                     <input
@@ -585,7 +585,7 @@ const CheckoutPage = () => {
                     htmlFor="region"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Country
+                    Страна
                   </label>
                   <div className="mt-1">
                     <input
@@ -610,7 +610,7 @@ const CheckoutPage = () => {
                     htmlFor="postal-code"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Postal code
+                    Почтовый индекс
                   </label>
                   <div className="mt-1">
                     <input
@@ -635,7 +635,7 @@ const CheckoutPage = () => {
                     htmlFor="order-notice"
                     className="block text-sm font-medium text-gray-700"
                   >
-                    Order notice
+                    Примечания к заказу
                   </label>
                   <div className="mt-1">
                     <textarea
@@ -662,7 +662,7 @@ const CheckoutPage = () => {
                 onClick={makePurchase}
                 className="w-full rounded-md border border-transparent bg-blue-500 px-20 py-2 text-lg font-medium text-white shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-gray-50 sm:order-last"
               >
-                Pay Now
+                Оплатить сейчас
               </button>
             </div>
           </div>

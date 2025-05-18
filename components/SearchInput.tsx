@@ -30,11 +30,11 @@ const SearchInput = () => {
         type="text"
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
-        placeholder="Type here"
+        placeholder="Введите здесь"
         className="bg-gray-50 input input-bordered w-[70%] rounded-r-none outline-none focus:outline-none max-sm:w-full"
       />
       <button type="submit" className="btn bg-blue-500 text-white rounded-l-none rounded-r-xl hover:bg-blue-600">
-        Search
+        Поиск
       </button>
     </form>
   );

@@ -117,11 +117,11 @@ const AddNewProduct = () => {
     <div className="bg-white flex justify-start max-w-screen-2xl mx-auto xl:h-full max-xl:flex-col max-xl:gap-y-5">
       <DashboardSidebar />
       <div className="flex flex-col gap-y-7 xl:ml-5 max-xl:px-5 w-full">
-        <h1 className="text-3xl font-semibold">Add new product</h1>
+        <h1 className="text-3xl font-semibold">Добавить новый продукт</h1>
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Product name:</span>
+              <span className="label-text">Название продукта:</span>
             </div>
             <input
               type="text"
@@ -156,7 +156,7 @@ const AddNewProduct = () => {
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Category:</span>
+              <span className="label-text">Категория:</span>
             </div>
             <select
               className="select select-bordered"
@@ -178,7 +178,7 @@ const AddNewProduct = () => {
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Product price:</span>
+              <span className="label-text">Цена продукта:</span>
             </div>
             <input
               type="text"
@@ -193,7 +193,7 @@ const AddNewProduct = () => {
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Manufacturer:</span>
+              <span className="label-text">Производитель:</span>
             </div>
             <input
               type="text"
@@ -208,7 +208,7 @@ const AddNewProduct = () => {
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Is product in stock?</span>
+              <span className="label-text">Есть в наличии?</span>
             </div>
             <select
               className="select select-bordered"
@@ -217,8 +217,8 @@ const AddNewProduct = () => {
                 setProduct({ ...product, inStock: Number(e.target.value) })
               }
             >
-              <option value={1}>Yes</option>
-              <option value={0}>No</option>
+              <option value={1}>Да</option>
+              <option value={0}>Нет</option>
             </select>
           </label>
         </div>
@@ -244,7 +244,7 @@ const AddNewProduct = () => {
         <div>
           <label className="form-control">
             <div className="label">
-              <span className="label-text">Product description:</span>
+              <span className="label-text">Описание продукта:</span>
             </div>
             <textarea
               className="textarea textarea-bordered h-24"

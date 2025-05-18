@@ -39,7 +39,7 @@ function SimpleSlider() {
               slider to adjust sound intensity to your preference.
             </p>
             <Link href="/shop" className="bg-custom-yellow btn w-52 h-14 text-black uppercase border border-black text-xl hover:bg-black hover:text-custom-yellow max-[1162px]:w-44 max-[1162px]:h-10 max-[1162px]:text-lg max-lg:text-base max-lg:w-36 max-md:text-sm max-md:w-32">
-              Shop now
+              Купить сейчас
             </Link>
           </div>
           <img src="/slider image 1.webp" alt="slider 1" className="h-full" />

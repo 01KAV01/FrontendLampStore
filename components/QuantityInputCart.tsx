@@ -36,7 +36,7 @@ const QuantityInputCart = ({ product } : { product: ProductInCart }) => {
     <div>
       <label htmlFor="Quantity" className="sr-only">
         {" "}
-        Quantity{" "}
+        Количество{" "}
       </label>
 
       <div className="flex items-center justify-center rounded border border-gray-200 w-32">

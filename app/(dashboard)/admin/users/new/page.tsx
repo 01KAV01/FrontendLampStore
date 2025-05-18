@@ -60,11 +60,11 @@ const DashboardCreateNewUser = () => {
     <div className="bg-white flex justify-start max-w-screen-2xl mx-auto xl:h-full max-xl:flex-col max-xl:gap-y-5">
       <DashboardSidebar />
       <div className="flex flex-col gap-y-7 xl:pl-5 max-xl:px-5 w-full">
-        <h1 className="text-3xl font-semibold">Add new user</h1>
+        <h1 className="text-3xl font-semibold">Добавление нового пользователя</h1>
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Email:</span>
+              <span className="label-text">Почта:</span>
             </div>
             <input
               type="email"
@@ -80,7 +80,7 @@ const DashboardCreateNewUser = () => {
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Password:</span>
+              <span className="label-text">Пароль:</span>
             </div>
             <input
               type="password"
@@ -96,7 +96,7 @@ const DashboardCreateNewUser = () => {
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">User role: </span>
+              <span className="label-text">Роль пользователя: </span>
             </div>
             <select
               className="select select-bordered"
@@ -105,8 +105,8 @@ const DashboardCreateNewUser = () => {
                 setUserInput({ ...userInput, role: e.target.value })
               }
             >
-              <option value="admin">admin</option>
-              <option value="user">user</option>
+              <option value="admin">администратор</option>
+              <option value="user">пользователь</option>
             </select>
           </label>
         </div>
@@ -117,7 +117,7 @@ const DashboardCreateNewUser = () => {
             className="uppercase bg-blue-500 px-10 py-5 text-lg border border-black border-gray-300 font-bold text-white shadow-sm hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2"
             onClick={addNewUser}
           >
-            Create user
+            Создать пользователя
           </button>
         </div>
       </div>

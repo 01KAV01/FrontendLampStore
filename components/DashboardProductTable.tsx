@@ -30,7 +30,7 @@ const DashboardProductTable = () => {
 
   return (
     <div className="w-full">
-      <h1 className="text-3xl font-semibold text-center mb-5">All products</h1>
+      <h1 className="text-3xl font-semibold text-center mb-5">Вся продукция</h1>
       <div className="flex justify-end mb-5">
         <Link href="/admin/products/new">
           <CustomButton
@@ -39,7 +39,7 @@ const DashboardProductTable = () => {
             paddingX={10}
             paddingY={5}
             textSize="base"
-            text="Add new product"
+            text="Добавить новый продукт"
           />
         </Link>
       </div>
@@ -50,13 +50,10 @@ const DashboardProductTable = () => {
           <thead>
             <tr>
               <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
               </th>
-              <th>Product</th>
-              <th>Stock Availability</th>
-              <th>Price</th>
+              <th>Продукт</th>
+              <th>Наличие на складе</th>
+              <th>Цена</th>
               <th></th>
             </tr>
           </thead>
@@ -95,19 +92,19 @@ const DashboardProductTable = () => {
 
                   <td>
                     { product?.inStock ? (<span className="badge badge-success text-white badge-sm">
-                      In stock
+                      В наличии
                     </span>) : (<span className="badge badge-error text-white badge-sm">
-                      Out of stock
+                      Распродано
                     </span>) }
                     
                   </td>
-                  <td>${product?.price}</td>
+                  <td>₽{product?.price}</td>
                   <th>
                     <Link
                       href={`/admin/products/${product.id}`}
                       className="btn btn-ghost btn-xs"
                     >
-                      details
+                      подробности
                     </Link>
                   </th>
                 </tr>
@@ -117,9 +114,6 @@ const DashboardProductTable = () => {
           <tfoot>
             <tr>
               <th></th>
-              <th>Product</th>
-              <th>Stock Availability</th>
-              <th>Price</th>
               <th></th>
             </tr>
           </tfoot>

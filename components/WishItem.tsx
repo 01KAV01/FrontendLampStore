@@ -60,11 +60,11 @@ const WishItem = ({
       fetch(`http://localhost:3001/api/wishlist/${userId}/${productId}`, {method: "DELETE"}).then(
         (response) => {
           removeFromWishlist(productId);
-          toast.success("Item removed from your wishlist");
+          toast.success("Товар удален из вашего списка желаний");
         }
       );
     }else{
-      toast.error("You need to be logged in to perform this action");
+      toast.error("Для выполнения этого действия вам необходимо войти в систему.");
     }
   };
 
@@ -102,9 +102,9 @@ const WishItem = ({
         onClick={() => openProduct(slug)}
       >
         {stockAvailabillity ? (
-          <span className="text-success">In stock</span>
+          <span className="text-success">В наличии</span>
         ) : (
-          <span className="text-error">Out of stock</span>
+          <span className="text-error">Распродано</span>
         )}
       </td>
       <td>
@@ -114,7 +114,7 @@ const WishItem = ({
             className="max-sm:hidden"
             onClick={() => deleteItemFromWishlist(id)}
           >
-            remove from the wishlist
+            удалить из списка желаний
           </span>
         </button>
       </td>

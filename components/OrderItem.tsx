@@ -2,7 +2,7 @@ import React from 'react'
 
 const OrderItem = () => {
   return (
-    <div className='w-full h-20 bg-gray-100'>OrderItem</div>
+    <div className='w-full h-20 bg-gray-100'>Заказать товар</div>
   )
 }
 

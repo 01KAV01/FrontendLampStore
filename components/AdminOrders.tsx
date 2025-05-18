@@ -27,22 +27,19 @@ const AdminOrders = () => {
 
   return (
     <div className="xl:ml-5 w-full max-xl:mt-5 ">
-      <h1 className="text-3xl font-semibold text-center mb-5">All orders</h1>
+      <h1 className="text-3xl font-semibold text-center mb-5">Все заказы</h1>
       <div className="overflow-x-auto">
         <table className="table table-md table-pin-cols">
           {/* head */}
           <thead>
             <tr>
               <th>
-                <label>
-                  <input type="checkbox" className="checkbox" />
-                </label>
               </th>
-              <th>Order ID</th>
-              <th>Name and country</th>
-              <th>Status</th>
-              <th>Subtotal</th>
-              <th>Date</th>
+              <th>ID заказа</th>
+              <th>Имя и страна</th>
+              <th>Статус</th>
+              <th>Промежуточный итог</th>
+              <th>Дата</th>
               <th></th>
             </tr>
           </thead>
@@ -79,7 +76,7 @@ const AdminOrders = () => {
                   </td>
 
                   <td>
-                    <p>${order?.total}</p>
+                    <p>₽{order?.total}</p>
                   </td>
 
                   <td>{ new Date(Date.parse(order?.dateTime)).toDateString() }</td>
@@ -88,7 +85,7 @@ const AdminOrders = () => {
                       href={`/admin/orders/${order?.id}`}
                       className="btn btn-ghost btn-xs"
                     >
-                      details
+                      детали
                     </Link>
                   </th>
                 </tr>
@@ -98,11 +95,6 @@ const AdminOrders = () => {
           <tfoot>
             <tr>
               <th></th>
-              <th>Order ID</th>
-              <th>Name and country</th>
-              <th>Status</th>
-              <th>Subtotal</th>
-              <th>Date</th>
               <th></th>
             </tr>
           </tfoot>

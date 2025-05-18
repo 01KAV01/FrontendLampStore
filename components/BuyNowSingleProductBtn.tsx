@@ -30,7 +30,7 @@ const BuyNowSingleProductBtn = ({
       amount: quantityCount,
     });
     calculateTotals();
-    toast.success("Product added to the cart");
+    toast.success("Продукт добавлен в корзину");
     router.push("/checkout");
   };
   return (
@@ -38,7 +38,7 @@ const BuyNowSingleProductBtn = ({
       onClick={handleAddToCart}
       className="btn w-[200px] text-lg border border-blue-500 hover:border-blue-500 border-1 font-normal bg-blue-500 text-white hover:bg-white hover:scale-110 hover:text-blue-500 transition-all uppercase ease-in max-[500px]:w-full"
     >
-      Buy Now
+      Купить сейчас
     </button>
   );
 };

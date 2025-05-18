@@ -24,21 +24,21 @@ const RatingPercentElement = () => {
           4.95
         </p>
         <p className="ms-1 text-lg font-medium text-black dark:text-gray-400">
-          out of
+          из
         </p>
         <p className="ms-1 text-lg font-medium text-black dark:text-gray-400">
           5
         </p>
       </div>
       <p className="text-lg font-medium text-black dark:text-gray-400 text-center">
-        1,745 global ratings
+        1,745 глобальные рейтинги
       </p>
       <div className="flex items-center justify-center mt-4">
         <a
           href="#"
           className="text-base font-medium text-black dark:text-blue-500 hover:underline"
         >
-          5 star
+          5 звёзд
         </a>
         <div className="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
           <div className="h-5 bg-custom-yellow rounded" style={{"width": "70%"}}></div>
@@ -52,7 +52,7 @@ const RatingPercentElement = () => {
           href="#"
           className="text-base font-medium text-black dark:text-blue-500 hover:underline"
         >
-          4 star
+          4 звезды
         </a>
         <div className="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
           <div className="h-5 bg-custom-yellow rounded" style={{"width": "17%"}}></div>
@@ -66,7 +66,7 @@ const RatingPercentElement = () => {
           href="#"
           className="text-base font-medium text-black dark:text-blue-500 hover:underline"
         >
-          3 star
+          3 звезды
         </a>
         <div className="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
           <div className="h-5 bg-custom-yellow rounded" style={{"width": "8%"}}></div>
@@ -80,7 +80,7 @@ const RatingPercentElement = () => {
           href="#"
           className="text-base font-medium text-black dark:text-blue-500 hover:underline"
         >
-          2 star
+          2 звезды
         </a>
         <div className="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
           <div className="h-5 bg-custom-yellow rounded" style={{"width": "4%"}}></div>
@@ -94,7 +94,7 @@ const RatingPercentElement = () => {
           href="#"
           className="text-base font-medium text-black dark:text-blue-500 hover:underline"
         >
-          1 star
+          1 звезда
         </a>
         <div className="w-2/4 h-5 mx-4 bg-gray-200 rounded dark:bg-gray-700">
           <div className="h-5 bg-custom-yellow rounded" style={{"width": "1%"}}></div>

@@ -22,7 +22,7 @@ const DashboardUsers = () => {
     <div className="bg-white flex justify-start max-w-screen-2xl mx-auto h-full max-xl:flex-col max-xl:h-fit max-xl:gap-y-4">
       <DashboardSidebar />
       <div className="w-full">
-        <h1 className="text-3xl font-semibold text-center mb-5">All users</h1>
+        <h1 className="text-3xl font-semibold text-center mb-5">Все пользователи</h1>
         <div className="flex justify-end mb-5">
           <Link href="/admin/users/new">
             <CustomButton
@@ -31,7 +31,7 @@ const DashboardUsers = () => {
               paddingX={10}
               paddingY={5}
               textSize="base"
-              text="Add new user"
+              text="Добавить нового пользователя"
             />
           </Link>
         </div>
@@ -41,12 +41,9 @@ const DashboardUsers = () => {
             <thead>
               <tr>
                 <th>
-                  <label>
-                    <input type="checkbox" className="checkbox" />
-                  </label>
                 </th>
-                <th>Email</th>
-                <th>Role</th>
+                <th>Почта</th>
+                <th>Роль</th>
                 <th></th>
               </tr>
             </thead>
@@ -74,7 +71,7 @@ const DashboardUsers = () => {
                         href={`/admin/users/${user?.id}`}
                         className="btn btn-ghost btn-xs"
                       >
-                        details
+                        подронее
                       </Link>
                     </th>
                   </tr>
@@ -84,8 +81,6 @@ const DashboardUsers = () => {
             <tfoot>
               <tr>
                 <th></th>
-                <th>Email</th>
-                <th>Role</th>
                 <th></th>
               </tr>
             </tfoot>

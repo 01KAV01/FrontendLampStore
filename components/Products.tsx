@@ -70,7 +70,7 @@ const Products = async ({ slug }: any) => {
         ))
       ) : (
         <h3 className="text-3xl mt-5 text-center w-full col-span-full max-[1000px]:text-2xl max-[500px]:text-lg">
-          No products found for specified query
+          По указанному запросу продукты не найдены
         </h3>
       )}
     </div>

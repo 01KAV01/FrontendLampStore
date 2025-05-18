@@ -23,7 +23,7 @@ const RangeWithLabels = () => {
 
   return (
     <div>
-      <span className="label-text text-lg text-black">Price filter:</span>
+      <span className="label-text text-lg text-black">Ценовой фильтр:</span>
       <input
         type="range"
         min={0}
@@ -34,11 +34,11 @@ const RangeWithLabels = () => {
         step="200"
       />
       <div className="w-full flex justify-between text-xs px-2">
-        <span>$0</span>
-        <span>$200</span>
-        <span>$400</span>
-        <span>$600</span>
-        <span>$4000</span>
+        <span>₽0</span>
+        <span>₽200</span>
+        <span>₽400</span>
+        <span>₽600</span>
+        <span>₽4000</span>
       </div>
     </div>
   );

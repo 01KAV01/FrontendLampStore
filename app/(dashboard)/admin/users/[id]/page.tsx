@@ -103,11 +103,11 @@ const DashboardSingleUserPage = ({
     <div className="bg-white flex justify-start max-w-screen-2xl mx-auto xl:h-full max-xl:flex-col max-xl:gap-y-5">
       <DashboardSidebar />
       <div className="flex flex-col gap-y-7 xl:pl-5 max-xl:px-5 w-full">
-        <h1 className="text-3xl font-semibold">User details</h1>
+        <h1 className="text-3xl font-semibold">Подробности пользователя</h1>
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Email:</span>
+              <span className="label-text">Почта:</span>
             </div>
             <input
               type="email"
@@ -123,7 +123,7 @@ const DashboardSingleUserPage = ({
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">New password:</span>
+              <span className="label-text">Новый пароль:</span>
             </div>
             <input
               type="password"
@@ -139,7 +139,7 @@ const DashboardSingleUserPage = ({
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">User role: </span>
+              <span className="label-text">Роль пользователя: </span>
             </div>
             <select
               className="select select-bordered"
@@ -148,8 +148,8 @@ const DashboardSingleUserPage = ({
                 setUserInput({ ...userInput, role: e.target.value })
               }
             >
-              <option value="admin">admin</option>
-              <option value="user">user</option>
+              <option value="admin">администратор</option>
+              <option value="user">пользователь</option>
             </select>
           </label>
         </div>
@@ -159,14 +159,14 @@ const DashboardSingleUserPage = ({
             className="uppercase bg-blue-500 px-10 py-5 text-lg border border-black border-gray-300 font-bold text-white shadow-sm hover:bg-blue-600 hover:text-white focus:outline-none focus:ring-2"
             onClick={updateUser}
           >
-            Update user
+            Обновить пользователя
           </button>
           <button
             type="button"
             className="uppercase bg-red-600 px-10 py-5 text-lg border border-black border-gray-300 font-bold text-white shadow-sm hover:bg-red-700 hover:text-white focus:outline-none focus:ring-2"
             onClick={deleteUser}
           >
-            Delete user
+            Удалить пользователя
           </button>
         </div>
       </div>

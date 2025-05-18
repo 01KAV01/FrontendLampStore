@@ -34,7 +34,7 @@ const ShopPage = (slug: any) => {
               <h2 className="text-2xl font-bold max-sm:text-xl max-[400px]:text-lg uppercase">
                 {slug?.params?.slug && slug?.params?.slug[0]?.length > 0
                   ? improveCategoryText(slug?.params?.slug[0])
-                  : "All products"}
+                  : "Вся продукция"}
               </h2>
 
               <SortBy />

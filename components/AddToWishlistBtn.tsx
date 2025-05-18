@@ -54,11 +54,11 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
                 slug: product?.slug,
                 stockAvailabillity: product?.inStock,
               });
-              toast.success("Product added to the wishlist");
+              toast.success("Продукт добавлен в список желаний");
             })
         );
     } else {
-      toast.error("You need to be logged in to add a product to the wishlist");
+      toast.error("Вам необходимо войти в систему, чтобы добавить продукт в список желаний.");
     }
   };
 
@@ -79,7 +79,7 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
         })
         .then((response) => {
           removeFromWishlist(product?.id);
-          toast.success("Product removed from the wishlist");
+          toast.success("Продукт удален из списка желаний");
         });
     }
   };
@@ -120,7 +120,7 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
           onClick={removeFromWishlistFun}
         >
           <FaHeartCrack className="text-xl text-custom-black" />
-          <span className="text-lg">REMOVE FROM WISHLIST</span>
+          <span className="text-lg">УДАЛИТЬ ИЗ СПИСКА ЖЕЛАНИЙ</span>
         </p>
       ) : (
         <p
@@ -128,7 +128,7 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
           onClick={addToWishlistFun}
         >
           <FaHeart className="text-xl text-custom-black" />
-          <span className="text-lg">ADD TO WISHLIST</span>
+          <span className="text-lg">ДОБАВИТЬ В СПИСОК ЖЕЛАНИЙ</span>
         </p>
       )}
     </>

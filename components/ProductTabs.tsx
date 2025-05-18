@@ -28,7 +28,7 @@ const ProductTabs = ({ product }: { product: Product }) => {
           }`}
           onClick={() => setCurrentProductTab(0)}
         >
-          Description
+          Описание
         </a>
         <a
           role="tab"
@@ -37,7 +37,7 @@ const ProductTabs = ({ product }: { product: Product }) => {
           }`}
           onClick={() => setCurrentProductTab(1)}
         >
-          Additional info
+          Дополнительная информация
         </a>
       </div>
       <div className="pt-5">
@@ -53,12 +53,12 @@ const ProductTabs = ({ product }: { product: Product }) => {
               <tbody>
                 {/* row 1 */}
                 <tr>
-                  <th>Manufacturer:</th>
+                  <th>Производитель:</th>
                   <td>{product?.manufacturer}</td>
                 </tr>
                 {/* row 2 */}
                 <tr>
-                  <th>Category:</th>
+                  <th>Категория:</th>
                   <td>
                     {product?.category?.name
                       ? formatCategoryName(product?.category?.name)
@@ -66,10 +66,10 @@ const ProductTabs = ({ product }: { product: Product }) => {
                   </td>
                 </tr>
                 {/* row 3 */}
-                <tr>
-                  <th>Color:</th>
-                  <td>Silver, LightSlateGray, Blue</td>
-                </tr>
+                {/* <tr>
+                  <th>Цвет:</th>
+                  <td>Серебро, Светло-серый, Голубой</td>
+                </tr> */}
               </tbody>
             </table>
           </div>
