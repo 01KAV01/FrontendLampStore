@@ -43,7 +43,7 @@ const WishItem = ({
 
   const getUserByEmail = useCallback(async () => {
     if (session?.user?.email) {
-      fetch(`http://localhost:3001/api/users/email/${session?.user?.email}`, {
+      fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${session?.user?.email}`, {
         cache: "no-store",
       })
         .then((response) => response.json())
@@ -57,7 +57,7 @@ const WishItem = ({
     
     if (userId) {
 
-      fetch(`http://localhost:3001/api/wishlist/${userId}/${productId}`, {method: "DELETE"}).then(
+      fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/wishlist/${userId}/${productId}`, {method: "DELETE"}).then(
         (response) => {
           removeFromWishlist(productId);
           toast.success("Товар удален из вашего списка желаний");
