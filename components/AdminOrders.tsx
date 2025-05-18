@@ -18,7 +18,7 @@ const AdminOrders = () => {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const response = await fetch("${process.env.NEXT_PUBLIC_API_URL}/api/orders");
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders`);
       const data = await response.json();
       setOrders(data);
     };
@@ -50,8 +50,7 @@ const AdminOrders = () => {
                 <tr key={order?.id}>
                   <th>
                     <label>
-                      <input type="checkbox" className="checkbox" aria-label="Выбрать заказ" />
-                      <span className="sr-only">Выбрать заказ</span>
+                      <input type="checkbox" className="checkbox" />
                     </label>
                   </th>
 
