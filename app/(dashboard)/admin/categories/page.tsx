@@ -55,7 +55,7 @@ const DashboardCategory = () => {
                   <tr key={nanoid()}>
                     <th>
                       <label>
-                        <input type="checkbox" className="checkbox" />
+                        <input type="checkbox" className="checkbox" title="Выбрать категорию" />
                       </label>
                     </th>
 

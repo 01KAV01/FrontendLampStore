@@ -54,7 +54,7 @@ const DashboardUsers = () => {
                   <tr key={nanoid()}>
                     <th>
                       <label>
-                        <input type="checkbox" className="checkbox" />
+                        <input type="checkbox" className="checkbox" title="Выбрать пользователя" />
                       </label>
                     </th>
 

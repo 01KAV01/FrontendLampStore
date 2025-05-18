@@ -50,7 +50,8 @@ const AdminOrders = () => {
                 <tr key={order?.id}>
                   <th>
                     <label>
-                      <input type="checkbox" className="checkbox" />
+                      <input type="checkbox" className="checkbox" aria-label="Выбрать заказ" />
+                      <span className="sr-only">Выбрать заказ</span>
                     </label>
                   </th>
 
