@@ -36,7 +36,7 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
       })
         .then((response) => response.json())
         .then((data) =>
-          fetch("${process.env.NEXT_PUBLIC_API_URL}/api/wishlist", {
+          fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/wishlist`, {
             method: "POST",
             headers: {
               Accept: "application/json, text/plain, */*",
