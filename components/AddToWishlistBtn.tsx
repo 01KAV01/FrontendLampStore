@@ -31,12 +31,12 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
     // getting user by email so I can get his user id
     if (session?.user?.email) {
       // sending fetch request to get user id because we will need it for saving wish item
-      fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${session?.user?.email}`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${session?.user?.email}`, {
         cache: "no-store",
       })
         .then((response) => response.json())
         .then((data) =>
-          fetch("http://${process.env.NEXT_PUBLIC_API_URL}/api/wishlist", {
+          fetch("${process.env.NEXT_PUBLIC_API_URL}/api/wishlist", {
             method: "POST",
             headers: {
               Accept: "application/json, text/plain, */*",
@@ -65,13 +65,13 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
   const removeFromWishlistFun = async () => {
     if (session?.user?.email) {
       // sending fetch request to get user id because we will need to delete wish item
-      fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${session?.user?.email}`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${session?.user?.email}`, {
         cache: "no-store",
       })
         .then((response) => response.json())
         .then((data) => {
           return fetch(
-            `http://${process.env.NEXT_PUBLIC_API_URL}/api/wishlist/${data?.id}/${product?.id}`,
+            `${process.env.NEXT_PUBLIC_API_URL}/api/wishlist/${data?.id}/${product?.id}`,
             {
               method: "DELETE",
             }
@@ -87,14 +87,14 @@ const AddToWishlistBtn = ({ product, slug }: AddToWishlistBtnProps) => {
   const isInWishlist = useCallback(async () => {
     // sending fetch request to get user id because we will need it for cheching whether the product is in wishlist
     if (session?.user?.email) {
-      fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${session?.user?.email}`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${session?.user?.email}`, {
         cache: "no-store",
       })
         .then((response) => response.json())
         .then((data) => {
           // checking is product in wishlist
           return fetch(
-            `http://${process.env.NEXT_PUBLIC_API_URL}/api/wishlist/${data?.id}/${product?.id}`
+            `${process.env.NEXT_PUBLIC_API_URL}/api/wishlist/${data?.id}/${product?.id}`
           );
         })
         .then((response) => response.json())

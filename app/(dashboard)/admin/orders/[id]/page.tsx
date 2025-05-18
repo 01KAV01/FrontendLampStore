@@ -52,7 +52,7 @@ const AdminSingleOrder = () => {
   useEffect(() => {
     const fetchOrderData = async () => {
       const response = await fetch(
-        `http://${process.env.NEXT_PUBLIC_API_URL}/api/orders/${params?.id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/orders/${params?.id}`
       );
       const data: Order = await response.json();
       setOrder(data);
@@ -60,7 +60,7 @@ const AdminSingleOrder = () => {
 
     const fetchOrderProducts = async () => {
       const response = await fetch(
-        `http://${process.env.NEXT_PUBLIC_API_URL}/api/order-product/${params?.id}`
+        `${process.env.NEXT_PUBLIC_API_URL}/api/order-product/${params?.id}`
       );
       const data: OrderProduct[] = await response.json();
       setOrderProducts(data);
@@ -98,7 +98,7 @@ const AdminSingleOrder = () => {
         return;
       }
 
-      fetch(`http://${process.env.NEXT_PUBLIC_API_URL}/api/orders/${order?.id}`, {
+      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/${order?.id}`, {
         method: "PUT", // or 'PUT'
         headers: {
           "Content-Type": "application/json",
@@ -126,11 +126,11 @@ const AdminSingleOrder = () => {
     };
 
     fetch(
-      `http://${process.env.NEXT_PUBLIC_API_URL}/api/order-product/${order?.id}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/order-product/${order?.id}`,
       requestOptions
     ).then((response) => {
       fetch(
-        `http://${process.env.NEXT_PUBLIC_API_URL}/api/orders/${order?.id}`,
+        `${process.env.NEXT_PUBLIC_API_URL}/api/orders/${order?.id}`,
         requestOptions
       ).then((response) => {
         toast.success("Order deleted successfully");
