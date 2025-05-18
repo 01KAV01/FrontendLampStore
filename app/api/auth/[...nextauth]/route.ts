@@ -17,27 +17,27 @@ export const authOptions: any = {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials: any) {
-
-        try {
-          const user = await prisma.user.findFirst({
-            where: {
-              email: credentials.email,
-            },
-          });
-          if (user) {
-            const isPasswordCorrect = await bcrypt.compare(
-              credentials.password,
-              user.password!
-            );
-            if (isPasswordCorrect) {
-              return user;
-            }
-          }
-        } catch (err: any) {
-          throw new Error(err);
-        }
+async authorize(credentials: any) {
+  try {
+    const user = await prisma.user.findFirst({
+      where: {
+        email: credentials.email,
       },
+    });
+    if (user) {
+      const isPasswordCorrect = await bcrypt.compare(
+        credentials.password,
+        user.password!
+      );
+      if (isPasswordCorrect) {
+        return user;
+      }
+    }
+    return null; // <-- Исправлено: возвращаем null вместо undefined
+  } catch (err: any) {
+    throw new Error(err);
+  }
+},
     })
     // GithubProvider({
     //   clientId: process.env.GITHUB_ID ?? "",

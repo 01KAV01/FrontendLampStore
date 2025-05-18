@@ -1,6 +1,6 @@
 "use client";
 import { SectionTitle, WishItem } from "@/components";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback} from "react";
 import { useWishlistStore } from "../_zustand/wishlistStore";
 import { nanoid } from "nanoid";
 import { useSession } from "next-auth/react";
@@ -11,7 +11,7 @@ const WishlistPage = () => {
   const { data: session, status } = useSession();
   const {wishlist, setWishlist}= useWishlistStore();
 
-  const getWishlistByUserId = async (id: string) => {
+  const getWishlistByUserId = useCallback(async (id: string) => {
     const response = await fetch(`http://localhost:3001/api/wishlist/${id}`, {
       cache: "no-store",
     });
@@ -29,9 +29,9 @@ const WishlistPage = () => {
     wishlist.map((item:any) => productArray.push({id: item?.product?.id, title: item?.product?.title, price: item?.product?.price, image: item?.product?.mainImage, slug: item?.product?.slug, stockAvailabillity: item?.product?.inStock}));
     
     setWishlist(productArray);
-  };
+   }, [setWishlist]);
 
-  const getUserByEmail = async () => {
+  const getUserByEmail = useCallback(async () => {
     if (session?.user?.email) {
       fetch(`http://localhost:3001/api/users/email/${session?.user?.email}`, {
         cache: "no-store",
@@ -41,11 +41,12 @@ const WishlistPage = () => {
           getWishlistByUserId(data?.id);
         });
     }
-  };
+  }, [session?.user?.email, getWishlistByUserId]);
 
   useEffect(() => {
     getUserByEmail();
-  }, [session?.user?.email, wishlist.length]);
+}, [getUserByEmail, wishlist.length]);
+
   return (
     <div className="bg-white">
       <SectionTitle title="Wishlist" path="Home | Wishlist" />

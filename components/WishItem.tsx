@@ -13,7 +13,7 @@ import { useWishlistStore } from "@/app/_zustand/wishlistStore";
 import { revalidatePath } from "next/cache";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import toast from "react-hot-toast";
 import { FaHeartCrack } from "react-icons/fa6";
 import { deleteWishItem } from "@/app/actions";
@@ -41,7 +41,7 @@ const WishItem = ({
     router.push(`/product/${slug}`);
   };
 
-  const getUserByEmail = async () => {
+  const getUserByEmail = useCallback(async () => {
     if (session?.user?.email) {
       fetch(`http://localhost:3001/api/users/email/${session?.user?.email}`, {
         cache: "no-store",
@@ -51,7 +51,7 @@ const WishItem = ({
           setUserId(data?.id);
         });
     }
-  };
+  }, [session?.user?.email]);
 
   const deleteItemFromWishlist = async (productId: string) => {
     
@@ -70,7 +70,7 @@ const WishItem = ({
 
   useEffect(() => {
     getUserByEmail();
-  }, [session?.user?.email]);
+  }, [getUserByEmail]);
 
   return (
     <tr className="hover:bg-gray-100 cursor-pointer">

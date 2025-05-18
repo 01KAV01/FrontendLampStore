@@ -19,7 +19,7 @@ const SearchPage = async ({ searchParams: { search } }: Props) => {
       <div className="max-w-screen-2xl mx-auto">
         {search && (
           <h3 className="text-4xl text-center py-10 max-sm:text-3xl">
-            В соответствии с запросом '{search}' обнаружено:
+            В соответствии с запросом &apos;{search}&apos; обнаружено:
           </h3>
         )}
         <div className="grid grid-cols-4 justify-items-center gap-x-2 gap-y-5 max-[1300px]:grid-cols-3 max-lg:grid-cols-2 max-[500px]:grid-cols-1">
