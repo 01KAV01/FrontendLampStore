@@ -1,12 +1,4 @@
-// *********************
-// Role of the component: Header component
-// Name of the component: Header.tsx
-// Developer: Aleksandar Kuzmanovic
-// Version: 1.0
-// Component call: <Header />
-// Input parameters: no input parameters
-// Output: Header component
-// *********************
+
 
 "use client";
 import { usePathname } from "next/navigation";
@@ -28,9 +20,9 @@ const Header = () => {
   const pathname = usePathname();
   const { wishlist, setWishlist, wishQuantity } = useWishlistStore();
 
-  const handleLogout = () => {
-    setTimeout(() => signOut(), 1000);
-    toast.success("Logout successful!");
+const handleLogout = () => {
+    setTimeout(() => signOut({ callbackUrl: "/login" }), 1000); // или другой нужный путь
+    toast.success("Выход из аккаунт выполнен успешно!");
   };
 
   // getting all wishlist items by user id

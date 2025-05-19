@@ -1,11 +1,4 @@
-// *********************
-// Role of the component: Rating percent element intended to be on the single product page
-// Name of the component: RatingPercentElement.tsx
-// Developer: Aleksandar Kuzmanovic
-// Version: 1.0
-// Component call: <RatingPercentElement />
-// Input parameters: no input parameters
-// Output: rating element that contains rating stats for the given single product
+
 // *********************
 
 import React from "react";

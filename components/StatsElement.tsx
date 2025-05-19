@@ -1,5 +1,5 @@
 // *********************
-// IN DEVELOPMENT
+//потом
 // *********************
 
 import React from "react";
