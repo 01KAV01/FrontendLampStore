@@ -14,9 +14,9 @@ const HeaderTop = () => {
   const { data: session }: any = useSession();
 
 const handleLogout = () => {
-    setTimeout(() => signOut({ callbackUrl: process.env.NEXTAUTH_URL }), 500);
-    toast.success("Выход из аккаунт выполнен успешно!");
-  }
+    setTimeout(() => signOut({ callbackUrl: "/login" }), 500);
+    toast.success("Выход из аккаунта выполнен успешно!");
+};
   return (
     <div className="h-10 text-white bg-blue-500 max-lg:px-5 max-lg:h-16 max-[573px]:px-0">
       <div className="flex justify-between h-full max-lg:flex-col max-lg:justify-center max-lg:items-center max-w-screen-2xl mx-auto px-12 max-[573px]:px-0">
