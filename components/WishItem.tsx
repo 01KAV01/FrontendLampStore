@@ -1,12 +1,3 @@
-// *********************
-// Role of the component: Wishlist item component for wishlist page
-// Name of the component: WishItem.tsx
-// Developer: Aleksandar Kuzmanovic
-// Version: 1.0
-// Component call: <WishItem id={id} title={title} price={price} image={image} slug={slug} stockAvailabillity={stockAvailabillity} />
-// Input parameters: ProductInWishlist interface
-// Output: single wishlist item on the wishlist page
-// *********************
 
 "use client";
 import { useWishlistStore } from "@/app/_zustand/wishlistStore";

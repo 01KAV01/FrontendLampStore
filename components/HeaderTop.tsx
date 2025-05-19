@@ -1,12 +1,4 @@
-// *********************
-// Role of the component: Topbar of the header
-// Name of the component: HeaderTop.tsx
-// Developer: Aleksandar Kuzmanovic
-// Version: 1.0
-// Component call: <HeaderTop />
-// Input parameters: no input parameters
-// Output: topbar with phone, email and login and register links
-// *********************
+
 
 "use client";
 import { signOut, useSession } from "next-auth/react";
@@ -21,9 +13,9 @@ import { FaRegUser } from "react-icons/fa6";
 const HeaderTop = () => {
   const { data: session }: any = useSession();
 
-  const handleLogout = () => {
-    setTimeout(() => signOut(), 1000);
-    toast.success("Logout successful!");
+const handleLogout = () => {
+    setTimeout(() => signOut({ callbackUrl: "/login" }), 1000); // или другой нужный путь
+    toast.success("Выход из аккаунт выполнен успешно!");
   }
   return (
     <div className="h-10 text-white bg-blue-500 max-lg:px-5 max-lg:h-16 max-[573px]:px-0">

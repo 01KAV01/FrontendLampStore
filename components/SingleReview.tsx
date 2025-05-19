@@ -1,5 +1,5 @@
 // *********************
-// IN DEVELOPMENT
+// пока не готово
 // *********************
 
 import Image from "next/image";
