@@ -41,9 +41,15 @@ const AdminOrders = () => {
               orders.map((order) => (
                 <tr key={order?.id}>
                   <th>
-                    <label>
-                      <input type="checkbox" className="checkbox" />
+                    <label htmlFor={`order-checkbox-${order?.id}`} className="sr-only">
+                      Выбрать заказ #{order?.id}
                     </label>
+                    <input
+                      type="checkbox"
+                      className="checkbox"
+                      id={`order-checkbox-${order?.id}`}
+                      title={`Выбрать заказ #${order?.id}`}
+                    />
                   </th>
 
                   <td>

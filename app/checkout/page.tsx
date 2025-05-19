@@ -82,7 +82,7 @@ const CheckoutPage = () => {
       }
 
       // sending API request for creating a order
-      const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders`, {
+      const response = fetch("http://localhost:3001/api/orders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -147,7 +147,7 @@ const CheckoutPage = () => {
     productQuantity: number
   ) => {
     // sending API POST request for the table customer_order_product that does many to many relatioship for order and product
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/order-product`, {
+    const response = await fetch("http://localhost:3001/api/order-product", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
@@ -518,7 +518,7 @@ const CheckoutPage = () => {
                       type="text"
                       id="address"
                       name="address"
-                      autoComplete="address-line1"
+                      autoComplete="street-address"
                       className="block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
                       value={checkoutForm.adress}
                       onChange={(e) =>
@@ -642,7 +642,7 @@ const CheckoutPage = () => {
                       className="textarea textarea-bordered textarea-lg w-full"
                       id="order-notice"
                       name="order-notice"
-                      autoComplete="off"
+                      autoComplete="order-notice"
                       value={checkoutForm.orderNotice}
                       onChange={(e) =>
                         setCheckoutForm({

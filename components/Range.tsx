@@ -19,7 +19,16 @@ const Range = ({ min, max, priceValue, setInputCategory } : RangeProps) => {
 
   return (
     <div>
-        <input type="range" min={min} max={max} value={priceValue} className="range range-warning" />
+        <label htmlFor="price-range">Выберите цену</label>
+        <input
+            id="price-range"
+            type="range"
+            min={min}
+            max={max}
+            value={priceValue}
+            className="range range-warning"
+            title="Выберите максимальную цену"
+        />
         <span>{ `Максимальная цена: ₽${currentRangeValue}` }</span>
     </div>
   )
