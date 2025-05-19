@@ -1,8 +1,8 @@
 "use client";
 
-// import React from "react";
-// import ProductItem from "./ProductItem";
-// import Heading from "./Heading";
+import React from "react";
+import ProductItem from "./ProductItem";
+import Heading from "./Heading";
 
 // const ProductsSection = async () => {
 //   // sending API request for getting all products
