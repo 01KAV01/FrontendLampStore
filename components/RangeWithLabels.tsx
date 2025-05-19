@@ -15,8 +15,9 @@ const RangeWithLabels = () => {
 
   return (
     <div>
-      <span className="label-text text-lg text-black">Ценовой фильтр:</span>
+      <label htmlFor="price-range" className="label-text text-lg text-black">Ценовой фильтр:</label>
       <input
+        id="price-range"
         type="range"
         min={0}
         max="1000"
@@ -24,6 +25,7 @@ const RangeWithLabels = () => {
         onChange={(e) => handleRangeWLabelsValue(e)}
         className="range range-warning"
         step="200"
+        title="Выберите ценовой диапазон"
       />
       <div className="w-full flex justify-between text-xs px-2">
         <span>₽0</span>

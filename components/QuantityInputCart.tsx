@@ -34,6 +34,7 @@ const QuantityInputCart = ({ product } : { product: ProductInCart }) => {
       <div className="flex items-center justify-center rounded border border-gray-200 w-32">
         <button
           type="button"
+          title="Уменьшить количество"
           className="size-10 leading-10 text-gray-600 transition hover:opacity-75 flex items-center justify-center"
           onClick={() => handleQuantityChange("minus")}
         >
@@ -47,9 +48,9 @@ const QuantityInputCart = ({ product } : { product: ProductInCart }) => {
           value={quantityCount}
           className="h-10 w-16 border-transparent text-center [-moz-appearance:_textfield] sm:text-sm [&::-webkit-inner-spin-button]:m-0 [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:m-0 [&::-webkit-outer-spin-button]:appearance-none"
         />
-
         <button
           type="button"
+          title="Увеличить количество"
           className="size-10 leading-10 text-gray-600 transition hover:opacity-75 flex items-center justify-center"
           onClick={() => handleQuantityChange("plus")}
         >

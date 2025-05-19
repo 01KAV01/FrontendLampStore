@@ -101,6 +101,7 @@ const Filters = () => {
             step={10}
             value={inputCategory.priceFilter.value}
             className="range"
+            title="Максимальная стоимость"
             onChange={(e) =>
               setInputCategory({
                 ...inputCategory,
@@ -132,6 +133,7 @@ const Filters = () => {
           }
           className="range range-info"
           step="1"
+          title="Минимальный рейтинг"
         />
         <div className="w-full flex justify-between text-xs px-2">
           <span>0</span>
