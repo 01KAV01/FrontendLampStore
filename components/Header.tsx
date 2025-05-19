@@ -22,7 +22,7 @@ const Header = () => {
 
 const handleLogout = () => {
     setTimeout(() => signOut({ callbackUrl: "/login" }), 1000); // или другой нужный путь
-    toast.success("Выход из аккаунт выполнен успешно!");
+    toast.success("Выход из аккаунта выполнен успешно!");
   };
 
   // getting all wishlist items by user id
