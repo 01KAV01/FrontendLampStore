@@ -21,7 +21,7 @@ const Header = () => {
   const { wishlist, setWishlist, wishQuantity } = useWishlistStore();
 
 const handleLogout = () => {
-    setTimeout(() => signOut({ callbackUrl: "/login" }), 1000); // или другой нужный путь
+    setTimeout(() => signOut({ callbackUrl: "https://frontendlampstore-production.up.railway.app/login" }), 500); // или другой нужный путь
     toast.success("Выход из аккаунта выполнен успешно!");
   };
 

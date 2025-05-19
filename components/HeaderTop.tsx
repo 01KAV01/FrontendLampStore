@@ -14,7 +14,7 @@ const HeaderTop = () => {
   const { data: session }: any = useSession();
 
 const handleLogout = () => {
-    setTimeout(() => signOut({ callbackUrl: "/login" }), 1000); // или другой нужный путь
+    setTimeout(() => signOut({ callbackUrl: "https://frontendlampstore-production.up.railway.app/login" }), 500);
     toast.success("Выход из аккаунт выполнен успешно!");
   }
   return (
