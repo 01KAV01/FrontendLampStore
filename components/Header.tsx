@@ -21,9 +21,9 @@ const Header = () => {
   const { wishlist, setWishlist, wishQuantity } = useWishlistStore();
 
 const handleLogout = () => {
-    setTimeout(() => signOut({ callbackUrl: process.env.NEXTAUTH_URL}), 500); // или другой нужный путь
+    setTimeout(() => signOut({ callbackUrl: "/login" }), 500);
     toast.success("Выход из аккаунта выполнен успешно!");
-  };
+};
 
   // getting all wishlist items by user id
   const getWishlistByUserId = useCallback(async (id: string) => {
