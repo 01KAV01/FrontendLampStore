@@ -35,7 +35,9 @@ const SingleProductPage = async ({ params }: SingleProductPageProps) => {
   if (!product || product.error) {
     notFound();
   }
-
+const loaderProp = ({ src }: { src: string }) => {
+    return src;
+}
   return (
     <div className="bg-white">
       <div className="max-w-screen-2xl mx-auto">
@@ -49,6 +51,7 @@ const SingleProductPage = async ({ params }: SingleProductPageProps) => {
             height={500}
             alt="main image"
             className="w-auto h-auto"
+            loader={loaderProp}
           />
             <div className="flex justify-around mt-5 flex-wrap gap-y-1 max-[500px]:justify-center max-[500px]:gap-x-1">
 {images?.map((imageItem: ImageItem) => (
@@ -59,6 +62,7 @@ const SingleProductPage = async ({ params }: SingleProductPageProps) => {
     height={100}
     alt="laptop image"
     className="w-auto h-auto"
+    loader={loaderProp}
   />
 ))}
             </div>
