@@ -26,14 +26,14 @@ const LoginPage = () => {
     const password = e.target[1].value;
 
     if (!isValidEmailAddressFormat(email)) {
-      setError("Email is invalid");
-      toast.error("Email is invalid");
+      setError("Неверный адресс электроннйо почты");
+      toast.error("Неверный адресс электронной почты");
       return;
     }
 
     if (!password || password.length < 8) {
-      setError("Password is invalid");
-      toast.error("Password is invalid");
+      setError("Неверный пароль");
+      toast.error("Неверный пароль");
       return;
     }
 
@@ -44,12 +44,12 @@ const LoginPage = () => {
     });
 
     if (res?.error) {
-      setError("Invalid email or password");
-      toast.error("Invalid email or password");
+      setError("Неверный адрес электронной почты или пароль");
+      toast.error("Неверный адрес электронной почты или пароль");
       if (res?.url) router.replace("/");
     } else {
       setError("");
-      toast.success("Successful login");
+      toast.success("Успешный вход");
     }
   };
 
@@ -119,7 +119,7 @@ const LoginPage = () => {
                     htmlFor="remember-me"
                     className="ml-3 block text-sm leading-6 text-gray-900"
                   >
-                    Remember me
+                    Запомнить меня
                   </label>
                 </div>
 
@@ -128,7 +128,7 @@ const LoginPage = () => {
                     href="#"
                     className="font-semibold text-black hover:text-black"
                   >
-                    Forgot password?
+                    Забыли пароль?
                   </a>
                 </div>
               </div>
@@ -155,7 +155,7 @@ const LoginPage = () => {
                 </div>
                 <div className="relative flex justify-center text-sm font-medium leading-6">
                   <span className="bg-white px-6 text-gray-900">
-                    Or continue with
+                    Или продолжить
                   </span>
                 </div>
               </div>
