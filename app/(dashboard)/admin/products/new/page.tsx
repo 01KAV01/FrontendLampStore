@@ -137,7 +137,7 @@ const AddNewProduct = () => {
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Product slug:</span>
+              <span className="label-text">URL адресс товара:</span>
             </div>
             <input
               type="text"

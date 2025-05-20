@@ -35,24 +35,24 @@ const DashboardCreateNewUser = () => {
 
             }else{
               
-              throw Error("Error while creating user");
+              throw Error("Ошибка при создании пользователя");
             }
           })
           .then((data) => {
-            toast.success("User added successfully");
+            toast.success("Пользователь успешно добавлен");
             setUserInput({
               email: "",
               password: "",
               role: "user",
             });
           }).catch(error => {
-            toast.error("Error while creating user");
+            toast.error("Ошибка при создании пользователя");
           });
       } else {
-        toast.error("Password must be longer than 7 characters");
+        toast.error("Пароль должен быть длиннее 7 символов");
       }
     } else {
-      toast.error("You must enter all input values to add a user");
+      toast.error("Для добавления пользователя необходимо ввести все входные значения");
     }
   };
 
