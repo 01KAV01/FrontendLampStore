@@ -24,20 +24,20 @@ const DashboardNewCategoryPage = () => {
           if (response.status === 201) {
             return response.json();
           } else {
-            throw Error("There was an error while creating category");
+            throw Error("Произошла ошибка при создании категории");
           }
         })
         .then((data) => {
-          toast.success("Category added successfully");
+          toast.success("Категория успешно добавлена");
           setCategoryInput({
             name: "",
           });
         })
         .catch((error) => {
-          toast.error("There was an error while creating category");
+          toast.error("Произошла ошибка при создании категории");
         });
     } else {
-      toast.error("You need to enter values to add a category");
+      toast.error("Вам необходимо ввести значения, чтобы добавить категорию");
     }
   };
   return (

@@ -45,39 +45,39 @@ const CheckoutPage = () => {
       checkoutForm.postalCode.length > 0
     ) {
       if (!isValidNameOrLastname(checkoutForm.name)) {
-        toast.error("You entered invalid format for name");
+        toast.error("Вы ввели неверный формат имени");
         return;
       }
 
       if (!isValidNameOrLastname(checkoutForm.lastname)) {
-        toast.error("You entered invalid format for lastname");
+        toast.error("Вы ввели неверный формат Фамилии");
         return;
       }
 
       if (!isValidEmailAddressFormat(checkoutForm.email)) {
-        toast.error("You entered invalid format for email address");
+        toast.error("Вы ввели неверный формат адреса электронной почты");
         return;
       }
 
       if (!isValidNameOrLastname(checkoutForm.cardName)) {
-        toast.error("You entered invalid format for card name");
+        toast.error("Вы ввели неверный формат имени карты");
         return;
       }
 
       if (!isValidCardNumber(checkoutForm.cardNumber)) {
-        toast.error("You entered invalid format for credit card number");
+        toast.error("Вы ввели неверный формат номера кредитной карты");
         return;
       }
 
       if (!isValidCreditCardExpirationDate(checkoutForm.expirationDate)) {
         toast.error(
-          "You entered invalid format for credit card expiration date"
+          "Вы ввели неверный формат даты окончания срока действия кредитной карты"
         );
         return;
       }
 
       if (!isValidCreditCardCVVOrCVC(checkoutForm.cvc)) {
-        toast.error("You entered invalid format for credit card CVC or CVV");
+        toast.error("Вы ввели неверный формат CVC или CVV кредитной карты");
         return;
       }
 
@@ -131,13 +131,13 @@ const CheckoutPage = () => {
             orderNotice: "",
           });
           clearCart();
-          toast.success("Order created successfuly");
+          toast.success("Заказ успешно оформлен");
           setTimeout(() => {
             router.push("/");
           }, 1000);
         });
     } else {
-      toast.error("You need to enter values in the input fields");
+      toast.error("Вам необходимо ввести значения в поля ввода");
     }
   };
 
@@ -164,14 +164,14 @@ const CheckoutPage = () => {
 
   useEffect(() => {
     if (products.length === 0) {
-      toast.error("You don't have items in your cart");
+      toast.error("В вашей корзине нет товаров");
       router.push("/cart");
     }
   }, [products.length, router]);
 
   return (
     <div className="bg-white">
-      <SectionTitle title="Checkout" path="Home | Cart | Checkout" />
+      <SectionTitle title="Checkout" path="Главная | Корзина | Оформление заказа" />
       {/* Background color split screen for large screens */}
       <div
         className="hidden h-full w-1/2 bg-white lg:block"

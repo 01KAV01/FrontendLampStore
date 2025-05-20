@@ -56,7 +56,7 @@ const DashboardProductDetails = ({
       product?.manufacturer === "" ||
       product?.description === ""
     ) {
-      toast.error("You need to enter values in input fields");
+      toast.error("Вам необходимо ввести значения в поля ввода");
       return;
     }
 
