@@ -20,6 +20,9 @@ const nextConfig = {
         ],
         
       },
+      redirect: async ()=>{
+        return absoluteUrl("/")
+}
 };
 
 export default nextConfig;
