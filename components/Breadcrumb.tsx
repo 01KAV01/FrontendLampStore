@@ -15,10 +15,10 @@ const Breadcrumb = () => {
           </Link>
         </li>
         <li>
-          <Link href="/shop">Магазин</Link>
+          <Link href="/shop?outOfStock=true&inStock=true&rating=0&price=3000&sort=defaultSort&page=1">Магазин</Link>
         </li>
         <li>
-          <Link href="/shop">Вся продукция</Link>
+          <Link href="/shop?outOfStock=true&inStock=true&rating=0&price=3000&sort=defaultSort&page=1">Вся продукция</Link>
         </li>
       </ul>
     </div>
