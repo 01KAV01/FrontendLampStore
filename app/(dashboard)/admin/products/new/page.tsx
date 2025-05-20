@@ -34,7 +34,7 @@ const AddNewProduct = () => {
       product.description == "" ||
       product.slug === ""
     ) {
-      toast.error("Please enter values in input fields");
+      toast.error("Пожалуйста, введите значения в поля ввода");
       return;
     }
 
@@ -48,11 +48,11 @@ const AddNewProduct = () => {
         if (response.status === 201) {
           return response.json();
         } else {
-          throw Error("There was an error while creating product");
+          throw Error("Произошла ошибка при создании продукта");
         }
       })
       .then((data) => {
-        toast.success("Product added successfully");
+        toast.success("Продукт успешно добавлен");
         setProduct({
           title: "",
           price: 0,
@@ -65,7 +65,7 @@ const AddNewProduct = () => {
         });
       })
       .catch((error) => {
-        toast.error("There was an error while creating product");
+        toast.error("Произошла ошибка при создании продукта");
       });
   };
 
@@ -82,10 +82,10 @@ const AddNewProduct = () => {
       if (response.ok) {
         const data = await response.json();
       } else {
-        console.error("File upload unsuccessfull");
+        console.error("Загрузка файла не удалась");
       }
     } catch (error) {
-      console.error("Error happend while sending request:", error);
+      console.error("Произошла ошибка при отправке запроса:", error);
     }
   };
 
