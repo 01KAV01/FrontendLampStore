@@ -11,7 +11,7 @@ const Breadcrumb = () => {
         <li>
           <Link href="/">
             <FaHouse className="mr-2" />
-            Дом
+            Главная
           </Link>
         </li>
         <li>
