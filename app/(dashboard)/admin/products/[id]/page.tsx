@@ -32,18 +32,18 @@ const DashboardProductDetails = ({
         if (response.status !== 204) {
           if (response.status === 400) {
             toast.error(
-              "Cannot delete the product because of foreign key constraint"
+              "Невозможно удалить продукт из-за ограничения внешнего ключа"
             );
           } else {
-            throw Error("There was an error while deleting product");
+            throw Error("Произошла ошибка при удалении продукта");
           }
         } else {
-          toast.success("Product deleted successfully");
+          toast.success("Продукт успешно удален");
           router.push("/admin/products");
         }
       })
       .catch((error) => {
-        toast.error("There was an error while deleting product");
+        toast.error("Произошла ошибка при удалении продукта");
       });
   };
 
@@ -70,12 +70,12 @@ const DashboardProductDetails = ({
         if (response.status === 200) {
           return response.json();
         } else {
-          throw Error("There was an error while updating product");
+          throw Error("Произошла ошибка при обновлении продукта");
         }
       })
-      .then((data) => toast.success("Product successfully updated"))
+      .then((data) => toast.success("Продукт успешно обновлен"))
       .catch((error) => {
-        toast.error("There was an error while updating product");
+        toast.error("Произошла ошибка при обновлении продукта");
       });
   };
 
@@ -96,8 +96,8 @@ const DashboardProductDetails = ({
         toast.error("File upload unsuccessful.");
       }
     } catch (error) {
-      console.error("There was an error while during request sending:", error);
-      toast.error("There was an error during request sending");
+      console.error("При отправке запроса произошла ошибка:", error);
+      toast.error("Произошла ошибка при отправке запроса");
     }
   };
 

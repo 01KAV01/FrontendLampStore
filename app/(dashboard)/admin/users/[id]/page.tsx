@@ -30,14 +30,14 @@ const DashboardSingleUserPage = ({
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/${id}`, requestOptions)
       .then((response) => {
         if (response.status === 204) {
-          toast.success("User deleted successfully");
+          toast.success("Пользователь успешно удален");
           router.push("/admin/users");
         } else {
-          throw Error("There was an error while deleting user");
+          throw Error("Произошла ошибка при удалении пользователя");
         }
       })
       .catch((error) => {
-        toast.error("There was an error while deleting user");
+        toast.error("Произошла ошибка при удалении пользователя");
       });
   };
 
@@ -48,7 +48,7 @@ const DashboardSingleUserPage = ({
       userInput.newPassword.length > 0
     ) {
       if (!isValidEmailAddressFormat(userInput.email)) {
-        toast.error("You entered invalid email address format");
+        toast.error("Вы ввели неверный формат адреса электронной почты");
         return;
       }
 
@@ -67,19 +67,19 @@ const DashboardSingleUserPage = ({
             if (response.status === 200) {
               return response.json();
             } else {
-              throw Error("Error while updating user");
+              throw Error("Ошибка при обновлении пользователя");
             }
           })
-          .then((data) => toast.success("User successfully updated"))
+          .then((data) => toast.success("Пользователь успешно обновлен"))
           .catch((error) => {
-            toast.error("There was an error while updating user");
+            toast.error("Произошла ошибка при обновлении пользователя");
           });
       } else {
-        toast.error("Password must be longer than 7 characters");
+        toast.error("Пароль должен быть длиннее 7 символов");
         return;
       }
     } else {
-      toast.error("For updating a user you must enter all values");
+      toast.error("Для обновления пользователя необходимо ввести все значения");
       return;
     }
   };

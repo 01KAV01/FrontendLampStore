@@ -26,14 +26,14 @@ const DashboardSingleCategory = ({
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories/${id}`, requestOptions)
       .then((response) => {
         if (response.status === 204) {
-          toast.success("Category deleted successfully");
+          toast.success("Категория успешно удалена");
           router.push("/admin/categories");
         } else {
-          throw Error("There was an error deleting a category");
+          throw Error("Произошла ошибка при удалении категории");
         }
       })
       .catch((error) => {
-        toast.error("There was an error deleting category");
+        toast.error("Произошла ошибка при удалении категории");
       });
   };
 
@@ -52,15 +52,15 @@ const DashboardSingleCategory = ({
           if (response.status === 200) {
             return response.json();
           } else {
-            throw Error("Error updating a category");
+            throw Error("Ошибка обновления категории");
           }
         })
-        .then((data) => toast.success("Category successfully updated"))
+        .then((data) => toast.success("Категория успешно обновлена"))
         .catch((error) => {
-          toast.error("There was an error while updating a category");
+          toast.error("Произошла ошибка при обновлении категории");
         });
     } else {
-      toast.error("For updating a category you must enter all values");
+      toast.error("Для обновления категории необходимо ввести все значения");
       return;
     }
   };

@@ -84,17 +84,17 @@ const AdminSingleOrder = () => {
       order?.postalCode.length > 0
     ) {
       if (!isValidNameOrLastname(order?.name)) {
-        toast.error("You entered invalid name format");
+        toast.error("Вы ввели неверный формат имени");
         return;
       }
 
       if (!isValidNameOrLastname(order?.lastname)) {
-        toast.error("You entered invalid lastname format");
+        toast.error("Вы ввели неверный формат фамилии");
         return;
       }
 
       if (!isValidEmailAddressFormat(order?.email)) {
-        toast.error("You entered invalid email format");
+        toast.error("Вы ввели неверный формат электронной почты");
         return;
       }
 
@@ -107,13 +107,13 @@ const AdminSingleOrder = () => {
       })
         .then((response) => {
           if (response.status === 200) {
-            toast.success("Order updated successfuly");
+            toast.success("Заказ успешно обновлен");
           } else {
-            throw Error("There was an error while updating a order");
+            throw Error("Произошла ошибка при обновлении заказа");
           }
         })
         .catch((error) =>
-          toast.error("There was an error while updating a order")
+          toast.error("Произошла ошибка при обновлении заказа")
         );
     } else {
       toast.error("Please fill all fields");
@@ -133,7 +133,7 @@ const AdminSingleOrder = () => {
         `${process.env.NEXT_PUBLIC_API_URL}/api/orders/${order?.id}`,
         requestOptions
       ).then((response) => {
-        toast.success("Order deleted successfully");
+        toast.success("Заказ успешно удален");
         router.push("/admin/orders");
       });
     });
