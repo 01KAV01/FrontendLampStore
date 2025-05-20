@@ -134,12 +134,12 @@ const DashboardProductDetails = ({
     <div className="bg-white flex justify-start max-w-screen-2xl mx-auto xl:h-full max-xl:flex-col max-xl:gap-y-5">
       <DashboardSidebar />
       <div className="flex flex-col gap-y-7 xl:ml-5 w-full max-xl:px-5">
-        <h1 className="text-3xl font-semibold">Product details</h1>
+        <h1 className="text-3xl font-semibold">Подробности продукта</h1>
         {/* Product name input div - start */}
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Product name:</span>
+              <span className="label-text">Наименование:</span>
             </div>
             <input
               type="text"
@@ -157,7 +157,7 @@ const DashboardProductDetails = ({
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Product price:</span>
+              <span className="label-text">Цена:</span>
             </div>
             <input
               type="text"
@@ -174,7 +174,7 @@ const DashboardProductDetails = ({
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Manufacturer:</span>
+              <span className="label-text">Производитель:</span>
             </div>
             <input
               type="text"
@@ -192,7 +192,7 @@ const DashboardProductDetails = ({
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Slug:</span>
+              <span className="label-text">URL адресс товара:</span>
             </div>
             <input
               type="text"
@@ -213,7 +213,7 @@ const DashboardProductDetails = ({
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Is product in stock?</span>
+              <span className="label-text">Есть ли товар на складе?</span>
             </div>
             <select
               className="select select-bordered"
@@ -222,8 +222,8 @@ const DashboardProductDetails = ({
                 setProduct({ ...product!, inStock: Number(e.target.value) });
               }}
             >
-              <option value={1}>Yes</option>
-              <option value={0}>No</option>
+              <option value={1}>Да</option>
+              <option value={0}>Нет</option>
             </select>
           </label>
         </div>
@@ -232,7 +232,7 @@ const DashboardProductDetails = ({
         <div>
           <label className="form-control w-full max-w-xs">
             <div className="label">
-              <span className="label-text">Category:</span>
+              <span className="label-text">Категория:</span>
             </div>
             <select
               className="select select-bordered"
@@ -302,7 +302,7 @@ const DashboardProductDetails = ({
         <div>
           <label className="form-control">
             <div className="label">
-              <span className="label-text">Product description:</span>
+              <span className="label-text">Описание товара:</span>
             </div>
             <textarea
               className="textarea textarea-bordered h-24"

@@ -20,28 +20,7 @@ const nextConfig = {
         ],
         
       },
-callbacks: {
 
-    async redirect({ url, baseUrl }) {
-
-      const frontendUrl = process.env.NEXTAUTH_URL || baseUrl;
-
-      if (url.startsWith('/')) {
-        return `${frontendUrl}${url}`;
-      }
-
-      try {
-        const parsedUrl = new URL(url);
-        if (parsedUrl.origin === frontendUrl) {
-          return url;
-        }
-      } catch (error) {
-        console.error('Invalid URL in redirect:', url);
-      }
-
-      return baseUrl;
-    },
-  },
 }
 
 
