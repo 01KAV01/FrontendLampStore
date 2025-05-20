@@ -6,6 +6,7 @@ import Image from "next/image";
 import { categoryMenuList } from "@/lib/utils";
 import Heading from "./Heading";
 
+
 const CategoryMenu = () => {
   return (
     <div className="py-10 bg-blue-500">
