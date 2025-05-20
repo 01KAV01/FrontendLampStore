@@ -21,17 +21,7 @@ const nextConfig = {
         
       },
 callbacks: {
-    async session({ session, token }) {
-      //logic...
-      return session;
-    },
-    async jwt({ token, user, accessToken }) {
-      //logic...
-      return token;
-    },
-    authorized({ request, auth }) {
-      // auth logic...
-    },
+
     async redirect({ url, baseUrl }) {
 
       const frontendUrl = process.env.NEXTAUTH_URL || baseUrl;
