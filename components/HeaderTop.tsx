@@ -14,7 +14,7 @@ const HeaderTop = () => {
   const { data: session }: any = useSession();
 
 const handleLogout = () => {
-    setTimeout(() => signOut({ callbackUrl: "/login" }), 500);
+    setTimeout(() => signOut({ callbackUrl: "/login", redirect: true }), 500);
     toast.success("Выход из аккаунта выполнен успешно!");
 };
   return (
