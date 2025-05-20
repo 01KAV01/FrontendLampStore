@@ -21,7 +21,7 @@ const Header = () => {
   const { wishlist, setWishlist, wishQuantity } = useWishlistStore();
 
 const handleLogout = () => {
-    setTimeout(() => signOut({ callbackUrl: `${process.env.NEXTAUTH_URL}/login`, redirect: true }), 500);
+    setTimeout(() => signOut({ callbackUrl: "/login", redirect: true }), 500);
     toast.success("Выход из аккаунта выполнен успешно!");
 };
 
