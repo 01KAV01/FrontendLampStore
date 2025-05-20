@@ -34,7 +34,7 @@ callbacks: {
     },
     async redirect({ url, baseUrl }) {
 
-      const frontendUrl = process.env.NEXT_PUBLIC_FRONTEND_URL || baseUrl;
+      const frontendUrl = process.env.NEXTAUTH_URL || baseUrl;
 
       if (url.startsWith('/')) {
         return `${frontendUrl}${url}`;
