@@ -56,7 +56,7 @@ interface Order {
   name: string;
   phone: string;
   postalCode: string;
-  status: "В процессе" | "Отменён" | "Доставлен";
+  status: "processing" | "canceled" | "delivered";
   city: string;
   country: string;
   orderNotice: string?;
