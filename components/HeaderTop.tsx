@@ -9,13 +9,18 @@ import { FaHeadphones } from "react-icons/fa6";
 import { FaRegEnvelope } from "react-icons/fa6";
 import { FaLocationDot } from "react-icons/fa6";
 import { FaRegUser } from "react-icons/fa6";
+import { useRouter } from "next/navigation";
 
 const HeaderTop = () => {
   const { data: session }: any = useSession();
+      const router = useRouter();
 
 const handleLogout = () => {
-    setTimeout(() => signOut({ callbackUrl: "/login", redirect: true }), 500);
-    toast.success("Выход из аккаунта выполнен успешно!");
+    setTimeout(() => { 
+      signOut({redirect: false}); 
+      router.push("https://frontendlampstore-production.up.railway.app/");
+      toast.success("Выход из аккаунта выполнен успешно!");
+    }, 500);
 };
   return (
     <div className="h-10 text-white bg-blue-500 max-lg:px-5 max-lg:h-16 max-[573px]:px-0">
