@@ -16,7 +16,7 @@ const ProductItem = ({
  const truncate = (text: string, maxLength: number) =>
     text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
 
-  const truncatedTitle = truncate(product.title, 25);
+  const truncatedTitle = truncate(product.title, 23);
 
   return (
     <div className="flex flex-col items-center gap-y-2">
