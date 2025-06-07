@@ -12,6 +12,12 @@ const ProductItem = ({
   product: Product;
   color: string;
 }) => {
+
+ const truncate = (text: string, maxLength: number) =>
+    text.length > maxLength ? text.substring(0, maxLength) + "..." : text;
+
+  const truncatedTitle = truncate(product.title, 25);
+
   return (
     <div className="flex flex-col items-center gap-y-2">
       <Link href={`/product/${product.slug}`}>
@@ -36,7 +42,7 @@ const ProductItem = ({
             : `text-xl text-white font-normal mt-2 uppercase`
         }
       >
-        {product.title}
+        {truncatedTitle}
       </Link>
       <p
         className={
