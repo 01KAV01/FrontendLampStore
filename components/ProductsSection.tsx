@@ -30,10 +30,8 @@ const ProductsSection = (slug: any) => {
                 {slug?.params?.slug && slug?.params?.slug[0]?.length > 0
                   ? improveCategoryText(slug?.params?.slug[0])
                   : ""}
-
-          
-                      <Products slug={slug} />
         </div>
+         <Products slug={slug} />
       </div>
     </div>
   );
