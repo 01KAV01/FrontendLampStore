@@ -13,15 +13,8 @@ import {
   SortBy,
 } from "@/components";
 
-const improveCategoryText = (text: string): string => {
-  if (text.indexOf("-") !== -1) {
-    let textArray = text.split("-");
 
-    return textArray.join(" ");
-  } else {
-    return text;
-  }
-};
+
 
 const ProductsSection = (slug: any) => {
   // sending API request for getting all products
@@ -31,11 +24,11 @@ const ProductsSection = (slug: any) => {
       <div className="max-w-screen-2xl mx-auto pt-20">
         <Heading title="ЛУЧШЕЕ ЗА ПОСЛЕДНЕЕ ВРЕМЯ" />
         <div className="divider"></div>
+        <Products slug={slug} />
         <div className="grid grid-cols-4 justify-items-center max-w-screen-2xl mx-auto py-10 gap-x-2 px-10 gap-y-8 max-xl:grid-cols-3 max-md:grid-cols-2 max-sm:grid-cols-1">
-                {slug?.params?.slug && slug?.params?.slug[0]?.length > 0
-                  ? improveCategoryText(slug?.params?.slug[0])
-                  : ""}
+          <Products slug={slug} />
         </div>
+        <Products slug={slug} />
       </div>
               <Products slug={slug} />
     </div>
