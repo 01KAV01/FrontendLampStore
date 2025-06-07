@@ -31,6 +31,7 @@ const ProductsSection = (slug: any) => {
                   ? improveCategoryText(slug?.params?.slug[0])
                   : ""}
         </div>
+        <div className="divider"></div>
          <Products slug={slug} />
       </div>
     </div>
