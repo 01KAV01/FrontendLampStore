@@ -226,4 +226,5 @@ npm run dev
 ![singitronic admin users page](https://github.com/Kuzma02/Electronics-eCommerce-Shop-With-Admin-Dashboard-NextJS-NodeJS/assets/138793624/e14e8f2c-4377-42fd-b89b-d4868cc11b11)
 #   F r o n t e n d L a m p S t o r e  
  #   F r o n t e n d L a m p S t o r e  
+ #   D i p l o m L a m p S t o r e  
  
