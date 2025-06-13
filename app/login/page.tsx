@@ -54,7 +54,7 @@ const LoginPage = () => {
   };
 
   if (sessionStatus === "loading") {
-    return <h1>Loading...</h1>;
+    return <h1>Загрузка...</h1>;
   }
   return (
     <div className="bg-white">
@@ -62,7 +62,7 @@ const LoginPage = () => {
       <div className="flex min-h-full flex-1 flex-col justify-center py-12 sm:px-6 lg:px-8 bg-white">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <h2 className="mt-6 text-center text-2xl font-normal leading-9 tracking-tight text-gray-900">
-            Sign in to your account
+            Зайти в твой аккаунт
           </h2>
         </div>
 
@@ -74,7 +74,7 @@ const LoginPage = () => {
                   htmlFor="email"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Email address
+                  Адрес элеткронной почты
                 </label>
                 <div className="mt-2">
                   <input
@@ -93,7 +93,7 @@ const LoginPage = () => {
                   htmlFor="password"
                   className="block text-sm font-medium leading-6 text-gray-900"
                 >
-                  Password
+                  Пароль
                 </label>
                 <div className="mt-2">
                   <input
