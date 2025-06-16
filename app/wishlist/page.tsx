@@ -49,7 +49,7 @@ const WishlistPage = () => {
 
   return (
     <div className="bg-white">
-      <SectionTitle title="Wishlist" path="Главная | Списко желаемого" />
+      <SectionTitle title="Список желаемого" path="Главная | Список желаемого" />
       {wishlist && wishlist.length === 0 ? (
         <h3 className="text-center text-4xl py-10 text-black max-lg:text-3xl max-sm:text-2xl max-sm:pt-5 max-[400px]:text-xl">
           Нет товаров в списке желаемого
