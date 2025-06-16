@@ -136,7 +136,7 @@ const LoginPage = () => {
               <div>
                 <CustomButton
                   buttonType="submit"
-                  text="Sign in"
+                  text="Войти"
                   paddingX={3}
                   paddingY={1.5}
                   customWidth="full"
