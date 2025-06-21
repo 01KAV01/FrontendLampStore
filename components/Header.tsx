@@ -1,5 +1,3 @@
-
-
 "use client";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState, useCallback } from "react";
@@ -25,7 +23,6 @@ const handleLogout = () => {
     toast.success("Выход из аккаунта выполнен успешно!");
 };
 
-  // getting all wishlist items by user id
   const getWishlistByUserId = useCallback(async (id: string) => {
     const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/wishlist/${id}`, {
       cache: "no-store",
@@ -45,7 +42,6 @@ const handleLogout = () => {
     setWishlist(productArray);
 }, [setWishlist]);
 
-  // getting user by email so I can get his user id
   const getUserByEmail = useCallback(async () => {
     if (session?.user?.email) {
       
