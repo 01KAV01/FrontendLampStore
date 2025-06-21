@@ -114,6 +114,11 @@ const handleLogout = () => {
                 <li>
                   <a>Профиль</a>
                 </li>
+                          <li>
+                          <Link href="/orders-history" className="flex items-center gap-x-2 font-semibold">
+                            История заказов
+                          </Link>
+                         </li>
                 <li onClick={handleLogout}>
                   <a href="#">Выйти</a>
                 </li>
