@@ -53,6 +53,11 @@ const handleLogout = () => {
           </>
           ) :  (<>
           <span className="ml-10 text-base">{session.user?.email}</span>
+          <li>
+          <Link href="/orders-history" className="flex items-center gap-x-2 font-semibold">
+            История заказов
+          </Link>
+          </li>
           <li className="flex items-center">
             <button onClick={() => handleLogout()} className="flex items-center gap-x-2 font-semibold">
               <FaRegUser className="text-white" />
