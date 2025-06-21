@@ -171,7 +171,7 @@ const CheckoutPage = () => {
 
   return (
     <div className="bg-white">
-      <SectionTitle title="Checkout" path="Главная | Корзина | Оформление заказа" />
+      <SectionTitle title="Оформление заказа" path="Главная | Корзина | Оформление заказа" />
       {/* Background color split screen for large screens */}
       <div
         className="hidden h-full w-1/2 bg-white lg:block"
