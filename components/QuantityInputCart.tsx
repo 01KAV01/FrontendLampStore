@@ -1,5 +1,3 @@
-
-
 "use client";
 import { ProductInCart, useProductStore } from "@/app/_zustand/store";
 import React, { useState } from "react";

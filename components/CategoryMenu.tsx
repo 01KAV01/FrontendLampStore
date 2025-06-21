@@ -1,5 +1,3 @@
-
-
 import React from "react";
 import CategoryItem from "./CategoryItem";
 import Image from "next/image";

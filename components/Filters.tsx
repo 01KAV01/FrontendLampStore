@@ -1,5 +1,3 @@
-
-
 "use client";
 import React, { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -17,8 +15,6 @@ interface InputCategory {
 const Filters = () => {
   const pathname = usePathname();
   const { replace } = useRouter();
-
-  // getting current page number from Zustand store
   const { page } = usePaginationStore();
 
   const [inputCategory, setInputCategory] = useState<InputCategory>({
@@ -31,7 +27,6 @@ const Filters = () => {
 
   useEffect(() => {
     const params = new URLSearchParams();
-    // setting URL params and after that putting them all in URL
     params.set("outOfStock", inputCategory.outOfStock.isChecked.toString());
     params.set("inStock", inputCategory.inStock.isChecked.toString());
     params.set("rating", inputCategory.ratingFilter.value.toString());

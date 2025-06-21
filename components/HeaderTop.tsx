@@ -50,6 +50,11 @@ const handleLogout = () => {
               <span>Регистрация</span>
             </Link>
           </li>
+          <li>
+          <Link href="/orders-history" className="flex items-center gap-x-2 font-semibold">
+            История заказов
+          </Link>
+         </li>
           </>
           ) :  (<>
           <span className="ml-10 text-base">{session.user?.email}</span>

@@ -1,4 +1,3 @@
-
 import React from "react";
 
 const Checkbox = ({ text, stateValue, setStateValue } : { text: string, stateValue: any, setStateValue: any }) => {
