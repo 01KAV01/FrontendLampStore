@@ -1,17 +1,15 @@
-"use client";
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 
-interface Order {
-  id: string;
-  dateTime: string;
+type Order = {
+  id: string | number;
+  dateTime?: string;
   status: string;
   total: number;
-  // добавь другие нужные поля
-}
+};
 
 export default function OrdersHistoryPage() {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
 
