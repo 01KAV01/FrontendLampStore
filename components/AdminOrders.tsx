@@ -50,7 +50,7 @@ const AdminOrders: React.FC<AdminOrdersProps> = ({ email }) => {
               <th>ID заказа</th>
               <th>Имя и страна</th>
               <th>Статус</th>
-              <th>Промежуточный итог</th>
+              <th>Итоговая стоимость</th>
               <th>Дата</th>
               <th></th>
             </tr>

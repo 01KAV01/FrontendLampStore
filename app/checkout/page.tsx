@@ -132,6 +132,7 @@ const CheckoutPage = () => {
           });
           clearCart();
           toast.success("Заказ успешно оформлен");
+          router.push("/order-success?orderId=ID_ЗАКАЗА");
           setTimeout(() => {
             router.push("/");
           }, 1000);

@@ -35,9 +35,10 @@ const UserOrders: React.FC<UserOrdersProps> = ({ email }) => {
               <th>ID заказа</th>
               <th>Имя и страна</th>
               <th>Статус</th>
-              <th>Промежуточный итог</th>
+              <th>Итоговая стоимость</th>
               <th>Дата</th>
               <th></th>
+              <th>Чек</th>
             </tr>
           </thead>
           <tbody>
@@ -85,10 +86,19 @@ const UserOrders: React.FC<UserOrdersProps> = ({ email }) => {
                   <td>{order?.dateTime ? new Date(Date.parse(order?.dateTime)).toDateString() : "—"}</td>
                   <th>
                     <Link
-                      href={`/orders/${order?.id}`}
+                      href={`/orders/${order.id}`}
                       className="btn btn-ghost btn-xs"
                     >
-                      детали
+                      подробнее
+                    </Link>
+                  </th>                 
+                   <th>
+                    <Link
+                    href={`/api/orders/${order.id}/receipt`}
+                    className="btn btn-outline btn-xs"
+                    download
+                    >
+                    Скачать чек
                     </Link>
                   </th>
                 </tr>
