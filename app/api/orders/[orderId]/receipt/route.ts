@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prismadb";
 import PDFDocument from "pdfkit";
+export const runtime = "nodejs";
 
 export async function GET(req: Request, { params }: { params: { orderId: string } }) {
   const { orderId } = params;

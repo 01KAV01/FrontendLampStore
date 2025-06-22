@@ -1,4 +1,5 @@
 "use client";
+export const runtime = "nodejs";
 import { SectionTitle } from "@/components";
 import { useProductStore } from "../_zustand/store";
 import Image from "next/image";
