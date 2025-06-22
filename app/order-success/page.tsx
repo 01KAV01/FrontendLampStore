@@ -20,7 +20,7 @@ export default function OrderSuccessPage({ searchParams }: OrderSuccessPageProps
     <div className="flex flex-col items-center justify-center min-h-[60vh]">
       <h1 className="text-3xl font-bold mb-4">Покупка успешно завершена!</h1>
       <p className="mb-6">Ваш чек в формате Word будет автоматически скачан. Спасибо за покупку!</p>
-      <a href="/" className="btn bg-blue-500 text-white rounded-l-none rounded-r-xl hover:bg-blue-600">На главную</a>
+      <a href="/" className="btn bg-blue-500 text-white rounded-l-x1 rounded-r-xl hover:bg-blue-600">На главную</a>
     </div>
   );
 }
