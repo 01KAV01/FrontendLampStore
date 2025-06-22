@@ -25,19 +25,17 @@ const Products = async ({ slug }: any) => {
     stockMode = "gt";
   }
 
-const data = await fetch(
-  `${process.env.NEXT_PUBLIC_API_URL}/api/products?filters[price][$lte]=${
-    slug?.searchParams?.price || 3000
-  }&filters[rating][$gte]=${
-    Number(slug?.searchParams?.rating) || 0
-  }&filters[inStock][$${stockMode}]=1&${
-    slug?.searchParams?.category
-      ? `filters[category][$equals]=${slug?.searchParams?.category}&`
-      : slug?.params?.slug?.length > 0
+  const data = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/products?filters[price][$lte]=${
+      slug?.searchParams?.price || 3000
+    }&filters[rating][$gte]=${
+      Number(slug?.searchParams?.rating) || 0
+    }&filters[inStock][$${stockMode}]=1&${
+      slug?.params?.slug?.length > 0
         ? `filters[category][$equals]=${slug?.params?.slug}&`
         : ""
-  }sort=${slug?.searchParams?.sort}&page=${page}`
-);
+    }sort=${slug?.searchParams?.sort}&page=${page}`
+  );
 
   const products = await data.json();
 
