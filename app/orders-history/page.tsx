@@ -1,14 +1,18 @@
 "use client";
-import { AdminOrders, DashboardSidebar } from "@/components";
-import React from "react";
+import { useSession } from "next-auth/react";
+import UserOrders from "@/components/UserOrders";
 
-const DashboardOrdersPage = () => {
+export default function OrdersHistoryPage() {
+  const { data: session } = useSession();
+
   return (
-    <div className="bg-white flex justify-start max-w-screen-2xl mx-auto h-full max-xl:flex-col max-xl:h-fit">
-      <DashboardSidebar />
-      <AdminOrders />
+    <div className="max-w-4xl mx-auto py-10">
+      <h1 className="text-2xl font-bold mb-6">История заказов</h1>
+      {session?.user?.email ? (
+        <UserOrders email={session.user.email} />
+      ) : (
+        <div className="text-gray-500">Не удалось получить email пользователя</div>
+      )}
     </div>
   );
-};
-
-export default DashboardOrdersPage;
+}
