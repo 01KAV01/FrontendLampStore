@@ -126,8 +126,6 @@ const Filters = () => {
           ))}
         </select>
       </div>
-
-      <div className="divider"></div>
       <div className="divider"></div>
       <div className="flex flex-col gap-y-1">
         <h3 className="text-xl mb-2">Цена</h3>
