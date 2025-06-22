@@ -81,6 +81,7 @@ const CheckoutPage = () => {
         return;
       }
 
+      let orderId = "";
       // sending API request for creating a order
       const response = fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders`, {
         method: "POST",
@@ -103,13 +104,11 @@ const CheckoutPage = () => {
           orderNotice: checkoutForm.orderNotice,
         }),
       })
-        .then((res) => res.json())
-        .then((data) => {
-          const orderId: string = data.id;
-          // for every product in the order we are calling addOrderProduct function that adds fields to the customer_order_product table
-          for (let i = 0; i < products.length; i++) {
-            let productId: string = products[i].id;
-            addOrderProduct(orderId, products[i].id, products[i].amount);
+.then((res) => res.json())
+      .then((data) => {
+        orderId = data.id; // <--- присваиваем id заказа
+        for (let i = 0; i < products.length; i++) {
+          addOrderProduct(orderId, products[i].id, products[i].amount);
           }
         })
         .then(() => {
@@ -133,7 +132,7 @@ const CheckoutPage = () => {
           clearCart();
           toast.success("Заказ успешно оформлен");
           setTimeout(() => {
-            router.push("/order-success?orderId=ID_ЗАКАЗА");
+            router.push(`/order-success?orderId=${orderId}`);
           }, 1000);
         });
     } else {
