@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "@/lib/prismadb";
-import PDFDocument from "pdfkit";
+import { Document, Packer, Paragraph, TextRun } from "docx";
 export const runtime = "nodejs";
 
 export async function GET(req: Request, { params }: { params: { orderId: string } }) {
@@ -18,42 +18,42 @@ export async function GET(req: Request, { params }: { params: { orderId: string 
 
   if (!order) return NextResponse.json({ error: "Order not found" }, { status: 404 });
 
-  const doc = new PDFDocument();
-  const buffers: Uint8Array[] = [];
-
-  doc.on("data", (chunk) => buffers.push(chunk));
-  doc.on("end", () => {});
-
-  // Используем только Times-Roman!
-  doc.font(process.cwd() + "/public/fonts/DejaVuSans.ttf");
-
-  doc.fontSize(20).text("Товарный чек", { align: "center" });
-  doc.moveDown();
-  doc.fontSize(14).text(`Номер заказа: ${order.id}`);
-  doc.text(`Дата: ${order.dateTime}`);
-  doc.text(`Покупатель: ${order.name} (${order.email})`);
-  doc.text(`Страна: ${order.country}`);
-  doc.moveDown();
-
-  doc.fontSize(16).text("Состав заказа:");
-  order.products.forEach((item, idx) => {
-    doc.fontSize(12).text(
-      `${idx + 1}. ${item.product.title} — ${item.quantity} шт.`
-    );
-  });
-  doc.moveDown();
-  doc.fontSize(14).text(`Сумма: ${order.total} ₽`);
-  doc.end();
-
-  const pdfBuffer = await new Promise<Buffer>((resolve) => {
-    doc.on("end", () => resolve(Buffer.concat(buffers)));
+  // Формируем параграфы для docx
+  const doc = new Document({
+    sections: [
+      {
+        properties: {},
+        children: [
+          new Paragraph({
+            children: [new TextRun({ text: "Товарный чек", bold: true, size: 40 })],
+            alignment: "center",
+          }),
+          new Paragraph(""),
+          new Paragraph(`Номер заказа: ${order.id}`),
+          new Paragraph(`Дата: ${order.dateTime}`),
+          new Paragraph(`Покупатель: ${order.name} (${order.email})`),
+          new Paragraph(`Страна: ${order.country}`),
+          new Paragraph(""),
+          new Paragraph({ children: [new TextRun({ text: "Состав заказа:", bold: true, size: 28 })] }),
+          ...order.products.map((item, idx) =>
+            new Paragraph(
+              `${idx + 1}. ${item.product.title} — ${item.quantity} шт.`
+            )
+          ),
+          new Paragraph(""),
+          new Paragraph({ children: [new TextRun({ text: `Сумма: ${order.total} ₽`, bold: true })] }),
+        ],
+      },
+    ],
   });
 
-  return new NextResponse(pdfBuffer, {
+  const buffer = await Packer.toBuffer(doc);
+
+  return new NextResponse(buffer, {
     status: 200,
     headers: {
-      "Content-Type": "application/pdf",
-      "Content-Disposition": `attachment; filename="receipt-${order.id}.pdf"`,
+      "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "Content-Disposition": `attachment; filename="receipt-${order.id}.docx"`,
     },
   });
 }
