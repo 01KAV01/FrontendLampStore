@@ -122,7 +122,7 @@ export async function GET(req: Request, { params }: { params: { orderId: string 
     status: 200,
     headers: {
       "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      "Content-Disposition": `attachment; filename="Товарный чек-${order.id}.docx"`,
+      "Content-Disposition": `attachment; filename="Chek-${order.id}.docx"`,
     },
   });
 }
