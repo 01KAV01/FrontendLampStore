@@ -1,12 +1,5 @@
-import {  Hero, Incentives, IntroducingSection, Newsletter, ProductsSection } from "@/components";
-
+import { redirect } from "next/navigation";
 export default function Home() {
-  return (
-    <>
-    <Hero />
-    <IntroducingSection />
-
-    <ProductsSection />
-    </>
-  );
+  redirect("/shop?outOfStock=true&inStock=true&rating=0&price=3000&sort=defaultSort&page=1");
+  return null;
 }
