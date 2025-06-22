@@ -11,7 +11,7 @@ export default function OrderSuccessPage({ searchParams }: OrderSuccessPageProps
 
   useEffect(() => {
     if (orderId) {
-      // Запуск скачивания PDF
+      // Запуск скачивания Word-файла
       window.location.href = `/api/orders/${orderId}/receipt`;
     }
   }, [orderId]);
@@ -19,7 +19,7 @@ export default function OrderSuccessPage({ searchParams }: OrderSuccessPageProps
   return (
     <div className="flex flex-col items-center justify-center min-h-[60vh]">
       <h1 className="text-3xl font-bold mb-4">Покупка успешно завершена!</h1>
-      <p className="mb-6">Ваш чек будет автоматически скачан. Спасибо за покупку!</p>
+      <p className="mb-6">Ваш чек в формате Word будет автоматически скачан. Спасибо за покупку!</p>
       <a href="/" className="btn btn-primary">На главную</a>
     </div>
   );

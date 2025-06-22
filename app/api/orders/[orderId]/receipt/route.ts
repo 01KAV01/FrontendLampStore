@@ -31,7 +31,7 @@ export async function GET(req: Request, { params }: { params: { orderId: string 
     new TableRow({
       children: [
         new TableCell({ children: [new Paragraph("№")], width: { size: 5, type: WidthType.PERCENTAGE } }),
-        new TableCell({ children: [new Paragraph("Наименование")], width: { size: 35, type: WidthType.PERCENTAGE } }),
+        new TableCell({ children: [new Paragraph("Наименование товара")], width: { size: 35, type: WidthType.PERCENTAGE } }),
         new TableCell({ children: [new Paragraph("Кол-во")], width: { size: 15, type: WidthType.PERCENTAGE } }),
         new TableCell({ children: [new Paragraph("Цена")], width: { size: 20, type: WidthType.PERCENTAGE } }),
         new TableCell({ children: [new Paragraph("Сумма")], width: { size: 25, type: WidthType.PERCENTAGE } }),
