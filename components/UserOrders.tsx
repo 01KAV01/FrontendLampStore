@@ -1,4 +1,5 @@
 "use client";
+
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
@@ -7,46 +8,30 @@ interface UserOrdersProps {
 }
 
 const UserOrders: React.FC<UserOrdersProps> = ({ email }) => {
-  const [orders, setOrders] = useState<any[]>([]);
+  const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!email) return;
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/user/${email}`)
-      .then((res) => res.json())
-      .then((data) => setOrders(data))
-      .finally(() => setLoading(false));
+    const fetchOrders = async () => {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/user/${email}`);
+      const data = await response.json();
+      setOrders(data);
+      setLoading(false);
+    };
+    fetchOrders();
   }, [email]);
 
   if (loading) return <div>Загрузка...</div>;
 
-  if (orders.length === 0) {
-    return <div className="text-gray-500">Отсутствуют совершённые заказы</div>;
-  }
-
-
-  const AdminOrders = () => {
-  const [orders, setOrders] = useState<Order[]>([]);
-
-  useEffect(() => {
-    const fetchOrders = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders`);
-      const data = await response.json();
-      setOrders(data);
-    };
-    fetchOrders();
-  }, []);
-
   return (
     <div className="xl:ml-5 w-full max-xl:mt-5 ">
-      <h1 className="text-3xl font-semibold text-center mb-5">Все заказы</h1>
+      <h1 className="text-3xl font-semibold text-center mb-5">История заказов</h1>
       <div className="overflow-x-auto">
         <table className="table table-md table-pin-cols">
-          {/* head */}
           <thead>
             <tr>
-              <th>
-              </th>
+              <th></th>
               <th>ID заказа</th>
               <th>Имя и страна</th>
               <th>Статус</th>
@@ -56,8 +41,13 @@ const UserOrders: React.FC<UserOrdersProps> = ({ email }) => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            {orders &&
+            {orders.length === 0 ? (
+              <tr>
+                <td colSpan={7} className="text-center text-gray-500">
+                  Отсутствуют совершённые заказы
+                </td>
+              </tr>
+            ) : (
               orders.map((order) => (
                 <tr key={order?.id}>
                   <th>
@@ -71,13 +61,11 @@ const UserOrders: React.FC<UserOrdersProps> = ({ email }) => {
                       title={`Выбрать заказ #${order?.id}`}
                     />
                   </th>
-
                   <td>
                     <div>
                       <p className="font-bold">#{order?.id}</p>
                     </div>
                   </td>
-
                   <td>
                     <div className="flex items-center gap-5">
                       <div>
@@ -86,30 +74,27 @@ const UserOrders: React.FC<UserOrdersProps> = ({ email }) => {
                       </div>
                     </div>
                   </td>
-
                   <td>
                     <span className="badge badge-success text-white badge-sm">
                       {order?.status}
                     </span>
                   </td>
-
                   <td>
                     <p>₽{order?.total}</p>
                   </td>
-
-                  <td>{ new Date(Date.parse(order?.dateTime)).toDateString() }</td>
+                  <td>{order?.dateTime ? new Date(Date.parse(order?.dateTime)).toDateString() : "—"}</td>
                   <th>
                     <Link
-                      href={`/admin/orders/${order?.id}`}
+                      href={`/orders/${order?.id}`}
                       className="btn btn-ghost btn-xs"
                     >
                       детали
                     </Link>
                   </th>
                 </tr>
-              ))}
+              ))
+            )}
           </tbody>
-          {/* foot */}
           <tfoot>
             <tr>
               <th></th>
@@ -119,22 +104,6 @@ const UserOrders: React.FC<UserOrdersProps> = ({ email }) => {
         </table>
       </div>
     </div>
-  );
-};
-
-
-  return (
-    <ul className="space-y-4">
-      {orders.map((order) => (
-        <li key={order.id} className="border p-4 rounded">
-          <div>Номер заказа: {order.id}</div>
-          <div>Почта: {order.email}</div>
-          <div>Дата: {order.dateTime ? new Date(order.dateTime).toLocaleString() : "—"}</div>
-          <div>Статус: {order.status}</div>
-          <div>Сумма: {order.total} ₽</div>
-        </li>
-      ))}
-    </ul>
   );
 };
 
