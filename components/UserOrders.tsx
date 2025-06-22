@@ -14,7 +14,7 @@ const UserOrders: React.FC<UserOrdersProps> = ({ email }) => {
   useEffect(() => {
     if (!email) return;
     const fetchOrders = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders/user/${email}`);
+      const response = await fetch(`/api/orders/user/${email}`);
       const data = await response.json();
       setOrders(data);
       setLoading(false);
