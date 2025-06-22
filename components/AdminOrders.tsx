@@ -3,28 +3,50 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-const AdminOrders = () => {
+interface Order {
+  id: string | number;
+  name: string;
+  country: string;
+  status: string;
+  total: number;
+  dateTime: string;
+  email: string;
+}
+
+interface AdminOrdersProps {
+  email?: string; // email теперь опциональный
+}
+
+const AdminOrders: React.FC<AdminOrdersProps> = ({ email }) => {
   const [orders, setOrders] = useState<Order[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/orders`);
+      let url = `${process.env.NEXT_PUBLIC_API_URL}/api/orders`;
+      if (email) {
+        url = `${process.env.NEXT_PUBLIC_API_URL}/api/orders/user/${email}`;
+      }
+      const response = await fetch(url);
       const data = await response.json();
       setOrders(data);
+      setLoading(false);
     };
     fetchOrders();
-  }, []);
+  }, [email]);
+
+  if (loading) return <div>Загрузка...</div>;
 
   return (
     <div className="xl:ml-5 w-full max-xl:mt-5 ">
-      <h1 className="text-3xl font-semibold text-center mb-5">Все заказы</h1>
+      <h1 className="text-3xl font-semibold text-center mb-5">
+        {email ? "История заказов" : "Все заказы"}
+      </h1>
       <div className="overflow-x-auto">
         <table className="table table-md table-pin-cols">
-          {/* head */}
           <thead>
             <tr>
-              <th>
-              </th>
+              <th></th>
               <th>ID заказа</th>
               <th>Имя и страна</th>
               <th>Статус</th>
@@ -34,8 +56,13 @@ const AdminOrders = () => {
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
-            {orders &&
+            {orders.length === 0 ? (
+              <tr>
+                <td colSpan={7} className="text-center text-gray-500">
+                  Отсутствуют совершённые заказы
+                </td>
+              </tr>
+            ) : (
               orders.map((order) => (
                 <tr key={order?.id}>
                   <th>
@@ -49,13 +76,11 @@ const AdminOrders = () => {
                       title={`Выбрать заказ #${order?.id}`}
                     />
                   </th>
-
                   <td>
                     <div>
                       <p className="font-bold">#{order?.id}</p>
                     </div>
                   </td>
-
                   <td>
                     <div className="flex items-center gap-5">
                       <div>
@@ -64,30 +89,31 @@ const AdminOrders = () => {
                       </div>
                     </div>
                   </td>
-
                   <td>
                     <span className="badge badge-success text-white badge-sm">
                       {order?.status}
                     </span>
                   </td>
-
                   <td>
                     <p>₽{order?.total}</p>
                   </td>
-
-                  <td>{ new Date(Date.parse(order?.dateTime)).toDateString() }</td>
+                  <td>
+                    {order?.dateTime
+                      ? new Date(Date.parse(order?.dateTime)).toDateString()
+                      : "—"}
+                  </td>
                   <th>
                     <Link
-                      href={`/admin/orders/${order?.id}`}
+                      href={email ? `/orders/${order?.id}` : `/admin/orders/${order?.id}`}
                       className="btn btn-ghost btn-xs"
                     >
                       детали
                     </Link>
                   </th>
                 </tr>
-              ))}
+              ))
+            )}
           </tbody>
-          {/* foot */}
           <tfoot>
             <tr>
               <th></th>
