@@ -76,15 +76,15 @@ export async function GET(req: Request, { params }: { params: { orderId: string 
         children: [
           new Paragraph({
             children: [new TextRun({ text: 'ООО "LampStore"', bold: true, size: 28 })],
-            alignment: AlignmentType.CENTER,
+            alignment: AlignmentType.LEFT,
           }),
           new Paragraph({
             children: [new TextRun({ text: "ИНН 7825706086", size: 24 })],
-            alignment: AlignmentType.CENTER,
+            alignment: AlignmentType.LEFT,
           }),
           new Paragraph({
             children: [new TextRun({ text: "410065, 64- Саратовская область. город Саратов, пр-кт им 50 лет Октября, дом 85", size: 24 })],
-            alignment: AlignmentType.CENTER,
+            alignment: AlignmentType.LEFT,
           }),
           new Paragraph(""),
           new Paragraph({
@@ -95,7 +95,7 @@ export async function GET(req: Request, { params }: { params: { orderId: string 
                 size: 28,
               }),
             ],
-            alignment: AlignmentType.CENTER,
+            alignment: AlignmentType.LEFT,
           }),
           new Paragraph(""),
           new Table({
@@ -122,7 +122,7 @@ export async function GET(req: Request, { params }: { params: { orderId: string 
     status: 200,
     headers: {
       "Content-Type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-      "Content-Disposition": `attachment; filename="receipt-${order.id}.docx"`,
+      "Content-Disposition": `attachment; filename="Товарный чек-${order.id}.docx"`,
     },
   });
 }
