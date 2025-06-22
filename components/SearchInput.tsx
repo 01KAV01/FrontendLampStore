@@ -1,5 +1,3 @@
-
-
 "use client";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -8,8 +6,6 @@ const SearchInput = () => {
   const [searchInput, setSearchInput] = useState<string>("");
   const router = useRouter();
 
-  // function for modifying URL for searching products
-  // After it we will grab URL on the search page and send GET request for searched products
   const searchProducts = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`/search?search=${searchInput}`);
