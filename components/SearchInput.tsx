@@ -11,7 +11,7 @@ const SearchInput = () => {
     router.push(`/search?search=${searchInput}`);
     setSearchInput("");
   };
-
+ 
   return (
     <form className="flex w-full justify-center" onSubmit={searchProducts}>
       <input
