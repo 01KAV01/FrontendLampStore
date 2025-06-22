@@ -24,7 +24,8 @@ export async function GET(req: Request, { params }: { params: { orderId: string 
   doc.on("data", (chunk) => buffers.push(chunk));
   doc.on("end", () => {});
 
-  doc.font("Times-Roman");
+  // Используем только Times-Roman!
+  doc.font(process.cwd() + "/public/fonts/DejaVuSans.ttf");
 
   doc.fontSize(20).text("Товарный чек", { align: "center" });
   doc.moveDown();
