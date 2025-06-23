@@ -32,7 +32,7 @@ const Filters = () => {
     useEffect(() => {
     async function fetchCategories() {
       try {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories`); // замените на ваш эндпоинт
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories`); 
         const data = await res.json();
         setCategories(data);
       } catch (e) {
