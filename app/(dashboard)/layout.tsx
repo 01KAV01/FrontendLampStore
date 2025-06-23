@@ -21,7 +21,7 @@ export default async function Layout({
   
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/users/email/${email}`);
   const data = await res.json();
-  // redirecting user to the home page if not admin
+
   if (data.role === "user") {
     redirect("/");
   }

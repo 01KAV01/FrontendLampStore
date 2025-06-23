@@ -14,7 +14,7 @@ interface Order {
 }
 
 interface AdminOrdersProps {
-  email?: string; // email теперь опциональный
+  email?: string; 
 }
 
 const AdminOrders: React.FC<AdminOrdersProps> = ({ email }) => {
