@@ -29,10 +29,10 @@ const params = [
   `filters[price][$lte]=${slug?.searchParams?.price || 3000}`,
   `filters[rating][$gte]=${Number(slug?.searchParams?.rating) || 0}`,
   `filters[inStock][$${stockMode}]=1`,
-  slug?.searchParams?.category
+  slug?.searchParams?.category && slug?.searchParams?.category !== ""
     ? `filters[categoryId][$equals]=${slug?.searchParams?.category}`
     : slug?.params?.slug?.length > 0
-      ? `filters[categoryId][$equals]=${slug?.params?.slug}` 
+      ? `filters[categoryId][$equals]=${slug?.params?.slug}`
       : null,
   `sort=${slug?.searchParams?.sort}`,
   `page=${page}`,
