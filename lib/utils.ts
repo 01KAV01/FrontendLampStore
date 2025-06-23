@@ -107,11 +107,9 @@ export const navigation = {
   ],
 };
 
-export const isValidNameOrLastname = (input: string) => {
-
-  const regex = /^[a-zA-Z\s]+$/;
-  return regex.test(input);
-};
+export function isValidNameOrLastname(str: string) {
+  return /^[a-zA-Zа-яА-ЯёЁ\s-]+$/.test(str);
+}
 
 export const isValidEmailAddressFormat = (input: string) => {
 
