@@ -1,5 +1,5 @@
 "use client";
-import { DashboardSidebar, StatsElement, StatsElementCurrentMonth } from "@/components";
+import { DashboardSidebar, StatsElement } from "@/components";
 import React, { useEffect } from "react";
 import { FaArrowUp } from "react-icons/fa6";
 
@@ -12,7 +12,7 @@ const AdminDashboardPage = () => {
           <StatsElement />
         </div>
         <div className="w-full bg-blue-500 text-white h-40 flex flex-col justify-center items-center gap-y-2">
-          <StatsElementCurrentMonth orders={[]} />
+          <StatsElement />
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ import { formatCategoryName } from "../../../../utils/categoryFormating";
 const DashboardCategory = () => {
   const [categories, setCategories] = useState<Category[]>([]);
 
-  // getting all categories to be displayed on the all categories page
+
   useEffect(() => {
     fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/categories`)
       .then((res) => {
